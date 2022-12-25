@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<!-- 上に戻るボタンの挙動設定 -->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div id="page-top"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href="../index.html"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="../information/index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../zoo/index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../park/index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../shop/index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_head">
+            <h2>園内マップ</h2>
+        </div>
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="section all"><!--セクション1　全体マップ-->
+        <div id="allJump"></div>
+        <h4>全体マップ</h4>
+        <div class="img">
+            <img class="popup" src="./images/pic_zmap.png" alt="">
+        </div>
+        <div id="modal-container"><!--拡大モーダル枠-->
+            <div>
+                <img src="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section event"><!--セクション2　イベントエリア-->
+        <div id="eventJump"></div>
+        <h4>イベントエリア</h4>
+        <div class="img">
+            <img class="popup" src="./images/pic_zmap_event.png" alt="">
+        </div>
+        <div id="modal-container"><!--拡大モーダル枠-->
+            <div>
+                <img src="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section animal"><!--セクション3　動物展示エリア-->
+        <div id="animalJump"></div>
+        <h4>動物展示エリア</h4>
+        <div class="img">
+            <img class="popup" src="./images/pic_zmap_zoo.png" alt="">
+        </div>
+        <div id="modal-container"><!--拡大モーダル枠-->
+            <div>
+                <img src="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section park"><!--セクション4　遊園地エリア-->
+        <div id="parkJump"></div>
+        <h4>遊園地エリア</h4>
+        <div class="img">
+            <img class="popup" src="./images/pic_zmap_park.png" alt="">
+        </div>
+        <div id="modal-container"><!--拡大モーダル枠-->
+            <div>
+                <img src="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section rest"><!--セクション5　レストランエリア-->
+        <div id="restJump"></div>
+        <h4>レストランエリア</h4>
+        <div class="img">
+            <img class="popup" src="./images/pic_zmap_rest.png" alt="">
+        </div>
+        <div id="modal-container"><!--拡大モーダル枠-->
+            <div>
+                <img src="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#allJump">全体</a>
+            </div>
+            <div class="btn">
+                <a href="#eventJump">イベント</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物展示</a>
+            </div>
+            <div class="btn">
+                <a href="#parkJump">遊園地</a>
+            </div>
+            <div class="btn">
+                <a href="#restJump">レストラン</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>

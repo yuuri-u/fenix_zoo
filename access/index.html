@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<!-- 上に戻るボタンの挙動設定 -->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div id="page-top pc_none"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href="../index.html"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="../information/index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../zoo/index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../park/index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../shop/index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../map/index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_head">
+            <h2>アクセス</h2>
+        </div>
+        <div class="main_menu">
+            <div class="btn">
+                <a href="#transportJump">アクセス</a>
+            </div>
+            <div class="btn">
+                <a href="#priceJump">駐車料金</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="transport">
+        <div id="transportJump"></div>
+        <h3 class="transport_head">交通機関でお越しの方</h3>
+
+        <div class="transport_container"> 
+            <div class="item">
+                <h4>バス</h4>
+                <p class="item_text">
+                    宮交シティからフェニックス自然動物園行きのバスが運行しております。時刻表は宮崎交通ホームページでご確認ください。<br>
+                    ※路線番号：11、11−1、19<br>
+                    ※路線時刻：宮崎市内線1-02（路線19）1-03（路線11、11-1）
+                </p>
+            </div>
+            <div class="item">
+                <h4>最寄りの駅から</h4>
+                <p class="item_text">
+                    JR日豊本線「日向住吉駅」よりタクシーにて約10分。<br>
+                    最寄駅からバスの運行はございません。<br>
+                    ※ 日向住吉駅は、特急、快速列車は停車しません
+                </p>
+            </div>
+            <div class="item">
+                <h4>JR宮崎駅</h4>
+                <p class="item_text">
+                    動物園までの直通電車はございません。<br>
+                    タクシーで動物園まで約15～20分ほどかかります。
+                </p>
+            </div>
+            <div class="item">
+                <h4>宮崎空港</h4>
+                <p class="item_text">
+                    JR宮崎空港線にて宮崎駅まで10分、宮崎交通空港連絡バスにて宮崎駅まで33分、その後タクシーで動物園まで約15〜20分ほどかかります。<br>
+                </p>
+            </div>
+        </div>       
+    </section>
+
+    <section class="car">
+        <h3 class="car_head">交通機関でお越しの方</h3>
+
+        <div class="car_container"> 
+            <div class="item">
+                <h4>九州自動車道方面から</h4>
+                <div class="item_flex">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1UMYbGNPlYCjuVwKivkeGGbcYNz1ccII&ehbc=2E312F" width="450" height="350"></iframe>
+                    <p class="item_text">
+                            九州自動車道宮崎インターチェンジより一ツ葉有料道路を利用し、住吉インターチェンジまで約15分ほどかかります。住吉インターチェンジを降り、道なりに進むと左側に動物園施設が見えます。
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <h4>延岡市方面から</h4>
+                <div class="item_flex">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1UMYbGNPlYCjuVwKivkeGGbcYNz1ccII&ehbc=2E312F" width="450" height="350"></iframe>
+                    <p class="item_text">
+                        延岡方面から国道10号線より一ツ葉有料道路を利用し、住吉インターチェンジで降り、道なりに進むと左側に動物園施設が見えます。延岡市からは約2時間ほどかかります。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="price">
+        <div id="priceJump"></div>
+        <h3 class="price_head">駐車料金</h3>
+
+        <div class="price_grid">
+            <div>乗用車</div>
+            <div>400円</div>
+            <div>マイクロバス</div>
+            <div>600円</div>
+            <div>大型バス</div>
+            <div>1,000円</div>
+            <div>特記事項</div>
+            <div>600台収容可能、時間制限なし（18時～翌日の開園まで閉鎖）</div>
+        </div>
+    </section>
+       
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>

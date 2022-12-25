@@ -1,0 +1,575 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  font-family: '筑紫A丸ゴシック', sans-serif;
+  color: #2E2E2E;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h2, p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6em;
+}
+
+h3 {
+  font-size: 1.5em;
+  padding: 5px 5px;
+  border-left: 5px solid #F8B851;
+}
+
+h4 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h4:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 4px;
+  background-color: #F8B851;
+  bottom: 1px;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2E2E2E;
+  font-weight: bold;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+/*見出し*/
+h2 {
+  padding: 10px 10px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+/*見出し＆説明テキスト*/
+.section_text {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+/*上へ戻るボタン*/
+#page-top {
+  position: fixed;
+  right: 60px;
+}
+
+#page-top a {
+  padding: 10px 20px;
+}
+
+#page-top a img {
+  width: 60px;
+}
+
+#page-top a:hover {
+  opacity: 0.6;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+/*ヘッダー*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100px;
+  background-color: #F8B851;
+}
+
+.header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin: auto;
+}
+
+.header-inner .logo {
+  width: 150px;
+  margin-left: 30px;
+  font-size: 1.3em;
+}
+
+.header-inner .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.header-inner .nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 60px 60px 0 0;
+  gap: 25px;
+}
+
+.header-inner .nav_list_item a {
+  height: 100%;
+  position: relative;
+}
+
+.header-inner .nav_list_item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.header-inner .nav_list_item a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+}
+
+.header-inner .nav_list .icon_info::before {
+  background-image: url(./images/icon/info.png);
+  background-size: 85%;
+}
+
+.header-inner .nav_list .icon_zoo::before {
+  background-image: url(./images/icon/zoo.png);
+  background-size: 90%;
+}
+
+.header-inner .nav_list .icon_park::before {
+  background-image: url(./images/icon/park.png);
+  background-size: 85%;
+}
+
+.header-inner .nav_list .icon_shop::before {
+  background-image: url(./images/icon/shop.png);
+  background-size: 85%;
+}
+
+.header-inner .nav_list .icon_map::before {
+  background-image: url(./images/icon/map.png);
+  background-size: 70%;
+}
+
+.header-inner .nav_list .icon_kids::before {
+  background-image: url(./images/icon/kids.png);
+  background-size: 85%;
+}
+
+.header-inner .nav_side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.header-inner .nav_side_item {
+  position: relative;
+}
+
+.header-inner .nav_side_item a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #FFF;
+  bottom: -3px;
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.header-inner .nav_side_item a:hover::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+/*メイン*/
+.main {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+}
+
+.main_head {
+  height: 45vh;
+  background: url(./images/top.png) no-repeat center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+  height: 45vh;
+}
+
+.main_menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  height: 70px;
+  background: url(./images/menuFlame.png) no-repeat center/cover;
+}
+
+.main_menu div a {
+  display: block;
+  margin-bottom: 10px;
+  color: #FFF;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/*セクション共通*/
+.section {
+  width: 1000px;
+  margin: 0 auto 150px;
+}
+
+.section #runJump, .section #priceJump, .section #parkJump, .section #swimJump {
+  padding-top: 100px;
+}
+
+.section .main_menu {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 80px;
+}
+
+/*セクション01　運行情報*/
+.run_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (0.5fr)[2] 1fr;
+      grid-template-columns: repeat(2, 0.5fr) 1fr;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+.run_grid div {
+  background-color: #FDF2DF;
+  padding: 8px 0 8px 15px;
+}
+
+/*セクション02　料金*/
+.price .container {
+  margin-bottom: 15px;
+}
+
+.price .container_text {
+  margin-top: -15px;
+}
+
+.price .container_gridTop {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (0.5fr)[2] 1fr;
+      grid-template-columns: repeat(2, 0.5fr) 1fr;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+.price .container_gridTop div {
+  background-color: #FDF2DF;
+  padding: 8px 0 8px 15px;
+}
+
+.price .container_gridBottom {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (0.5fr)[2] 1fr;
+      grid-template-columns: repeat(2, 0.5fr) 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-top: 15px;
+}
+
+.price .container_gridBottom div {
+  background-color: #FDF2DF;
+  padding: 8px 0 8px 15px;
+}
+
+.price .attension {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+/*セクション03　あそぶ*/
+.park .target_grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+      grid-template-columns: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  margin: 10px 0 30px;
+}
+
+.park .target_grid img {
+  width: 35px;
+  height: 35px;
+}
+
+.park h4 {
+  margin-bottom: 5px;
+}
+
+.park .atraction_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin: 30px 0;
+}
+
+.park .atraction_grid img {
+  width: 230px;
+  height: 230px;
+}
+
+/*セクション04　およぐ*/
+.swim .news {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 4px solid #F8B851;
+}
+
+.swim h4 {
+  margin-bottom: 5px;
+}
+
+.swim_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  margin: 50px 0 30px;
+}
+
+.swim_flex img {
+  width: 475px;
+}
+
+/*フッター*/
+.footer {
+  width: 100vw;
+  padding-bottom: 30px;
+  background: url(./images/footer_bg.png) no-repeat center/cover;
+}
+
+.footer img {
+  width: 100%;
+}
+
+.footer .item {
+  margin: 6px 0;
+}
+
+.footer .f_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 50px;
+}
+
+.footer .f_inner_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+
+.footer .f_inner_info .logo {
+  width: 350px;
+}
+
+.footer .f_inner_info_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.footer .f_inner_info_text .top {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer .f_inner_info_text .address p {
+  font-style: normal;
+  margin: 4px 0;
+}
+
+.footer .f_inner_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+  text-align: right;
+}
+
+.footer .f_inner_nav_list::after {
+  display: block;
+  height: 2px;
+  margin-top: 17px;
+  background-color: #2E2E2E;
+  content: "";
+}
+
+.footer .f_inner_nav a {
+  position: relative;
+}
+
+.footer .f_inner_nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #FFF;
+  bottom: -3px;
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.footer .f_inner_nav a:hover::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.footer .small {
+  display: block;
+  margin: 10px 0 0 50px;
+  font-size: 0.7em;
+}
+
+/*ここからiPadサイズ*/
+/*# sourceMappingURL=text.css.map */
