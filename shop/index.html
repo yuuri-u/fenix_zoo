@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<!-- 上に戻るボタンの挙動設定 -->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div id="page-top"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href="../index.html"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="../information/index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../zoo/index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../map/index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_head">
+            <h2>ショップ</h2>
+        </div>
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#eatJump">たべる</a>
+            </div>
+            <div class="btn">
+                <a href="#buyJump">かう</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="section eat"><!--セクション1　食べる-->
+        <div id="eatJump"></div>
+        <h3 class="section_head">たべる</h3>
+
+        <div class="eat_rest"><!--レストラン-->
+            <h4>レストラン</h4>
+            <p>
+                お子様から幅広くご利用いただけるメニューをご用意いたしました。<br>
+                カレーライスや定食、お子様メニューをはじめ、各種ドリンク･フロートやソフトクリームなどもお楽しみください。
+            </p>
+            <div class="eat_rest_grid">
+                <div>
+                    <img src="./images/food01.png" alt="">
+                    <p class="grid_text">ランチボックス<br>800円</p>
+                </div>
+                <div>
+                    <img src="./images/food02.png" alt="">
+                    <p class="grid_text">チキン南蛮定食<br>950円</p>
+                </div>
+                <div>
+                    <img src="./images/food03.png" alt="">
+                    <p class="grid_text">アジフライ定食<br>950円</p>
+                </div>
+                <div>
+                    <img src="./images/food04.png" alt="">
+                    <p class="grid_text">中華丼<br>850円</p>
+                </div>
+                <div>
+                    <img src="./images/food05.png" alt="">
+                    <p class="grid_text">カレーライス<br>650円</p>
+                </div>
+                <div>
+                    <img src="./images/food06.png" alt="">
+                    <p class="grid_text">カツカレー<br>850円</p>
+                </div>
+                <div>
+                    <img src="./images/food07.png" alt="">
+                    <p class="grid_text">スペシャルうどん / そば<br>900円</p>
+                </div>
+                <div>
+                    <img src="./images/food08.png" alt="">
+                    <p class="grid_text">きつねうどん / そば<br>600円</p>
+                </div>
+                <div>
+                    <img src="./images/food09.png" alt="">
+                    <p class="grid_text">きのこ山菜うどん / そば<br>700円</p>
+                </div>
+                <div>
+                    <img src="./images/food010.png" alt="">
+                    <p class="grid_text">肉・海老天うどん / そば<br>850円</p>
+                </div>
+                <div>
+                    <img src="./images/food011.png" alt="">
+                    <p class="grid_text">丸天とろろ昆布ゆずうどん / そば<br>680円</p>
+                </div>
+                <div>
+                    <img src="./images/food012.png" alt="">
+                    <p class="grid_text">お子様プレート<br>700円</p>
+                </div>
+                <div>
+                    <img src="./images/food013.png" alt="">
+                    <p class="grid_text">お子様カレー<br>550円</p>
+                </div>
+                <div>
+                    <img src="./images/food014.png" alt="">
+                    <p class="grid_text">お子様うどん<br>300円</p>
+                </div>
+                <div>
+                    <img src="./images/food015.png" alt="">
+                    <p class="grid_text">ソフトクリーム<br>各種　350円〜380円</p>
+                </div>
+                <div>
+                    <img src="./images/food016.png" alt="">
+                    <p class="grid_text">フロート<br>各種　400円</p>
+                </div>
+                <div>
+                    <img src="./images/food017.png" alt="">
+                    <p class="grid_text">ディッピンドッツアイスクリーム<br>430円</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="eat_car"><!--キッチンカー-->
+            <h4>キッチンカー</h4>
+            <p>
+                レストラン前にキッチンカーを常設しております。<br>
+                もちもち食感のフライドポテトや炭酸アイスなど、持ち運びのできる軽食を販売しております。
+            </p>
+            <div class="eat_car_grid">
+                <div>
+                    <img src="./images/food018.png" alt="">
+                    <p class="grid_text">ラスのフライドポテト<br>300円</p>
+                </div>
+                <div>
+                    <img src="./images/food019.png" alt="">
+                    <p class="grid_text">もちもちロングポテト<br>400円</p>
+                </div>
+                <div>
+                    <img src="./images/food020.png" alt="">
+                    <p class="grid_text">炭酸シュワポップ<br>各種　300円</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#eatJump">たべる</a>
+            </div>
+            <div class="btn">
+                <a href="#buyJump">かう</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section buy"><!--セクション2　買う-->
+        <div id="buyJump"></div>
+        <h3 class="section_head">かう</h3>
+        <h4>お土産ショップ</h4>
+        <p>
+            【アニマルズ～どうぶつたちの集まる場所〜】をテーマに、動物園のお店ならではのどうぶつ商品をそろえました。<br>
+            お菓子やアイスクリーム、宮崎のおみやげ菓子も販売しています。
+        </p>
+
+        <div class="container">
+            <img src="./images/shop01.png" alt="">
+            <div class="container_images">
+                <img class="left" src="./images/shop02.png" alt="">
+                <img class="right" src="./images/shop03.png" alt="">
+            </div>
+        </div>
+
+        <div class="main_menu"><!-- ジャンプメニュー -->
+            <div class="btn">
+                <a href="#eatJump">たべる</a>
+            </div>
+            <div class="btn">
+                <a href="#buyJump">かう</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>

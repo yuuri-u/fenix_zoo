@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<script>
+    $(function () {
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 4,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
+    })
+</script>
+</head>
+
+<body>
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href=""><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="./information/index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./zoo/index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./park/index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./shop/index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./map/index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main><!--メインビジュアル-->
+        <div class="mainvisual">
+            <ul class="sns"><!--左サイドSNSリンク-->
+                <li class="sns_item">
+                    <a href="">
+                        <img src="./images/icon/twitter.png" alt="Twitter">
+                    </a>
+                </li>
+                <li class="sns_item">
+                    <a href="">
+                        <img src="./images/icon/instagram.png" alt="Instagram">
+                    </a>
+                </li>
+                <li class="sns_item">
+                    <a href="">
+                        <img src="./images/icon/facebook.png" alt="Facebook">
+                    </a>
+                </li>
+            </ul>
+
+            <a href="./kids/index.html" class="kids_logo"><!--キッズサイトロゴリンク-->
+                <img src="./images/kids-logo.png">
+            </a>
+
+            <img src="./images/catchcopy_pc.png" class="catchcopy">
+
+            <ul class="sub_menu"><!--メインビジュアル下部リンク-->
+                <li class="sub_menu_item">
+                    <a href="./access/index.html" class="icon_access">
+                        アクセス
+                    </a>
+                </li>
+                <li class="sub_menu_item">
+                    <a href="./price/index.html" class="icon_price">
+                        料金・営業時間
+                    </a>
+                </li>
+                <li class="sub_menu_item">
+                    <a href="" class="icon_calender">
+                        営業カレンダー
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <section class="f_section"><!--セクション01　お知らせ-->
+        <h2 class="head">お知らせ</h2>
+
+        <div class="flex">
+            <div class="flex_imgGoat">
+                <img src="./images/animals/top02.png" alt="">
+            </div>
+
+            <ul class="flex_list">
+                <li class="flex_list_item">
+                    <div class="time">
+                        <time datetime="2022-08-17">2022.08.17</time>
+                    </div>
+                    <a href="">
+                        <p>「いい歯の日」特別イベント～動物もヒトも歯が大事～</p>
+                    </a>
+                </li>
+                
+                <li class="flex_list_item">
+                    <div class="time">
+                        <time datetime="2022-08-17">2022.08.17</time>
+                    </div>
+                    <a href="">
+                        <p>計量記念日イベント「ケヅメリクガメの体重測定」</p>
+                    </a>
+                </li>
+
+                <li class="flex_list_item">
+                    <div class="time">
+                        <time datetime="2022-08-17">2022.08.17</time>
+                    </div>
+                    <a href="">
+                        <p>「パラグライダー」運転再開に向けて工事開始！</p>
+                    </a>
+                </li>
+
+                <li class="flex_list_item">
+                    <div class="time">
+                        <time datetime="2022-08-17">2022.08.17</time>
+                    </div>
+                    <a href="">
+                        <p>動物園感謝デー～入園料　大人300円・中学生以下無料～</p>
+                    </a>
+                </li>
+
+                <li class="flex_list_item">
+                    <div class="time">
+                        <time datetime="2022-08-17">2022.08.17</time>
+                    </div>
+                    <a href="">
+                        <p>11月1日より「どうぶつクイズラリー」開始！</p>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="flex_imgPen">
+                <img src="./images/animals/top01.png" alt="">
+            </div>
+        </div>
+
+        <a class="btn" href="">もっと見る</a>
+
+    </section>
+
+    <section class="s_section"><!--セクション02　キッズサイト告知-->
+        <div class="s_section_contain">
+            <div class="s_section_contain_head">
+                <div>
+                    <h2 class="scrolldownRight">
+                        キッズページが
+                    </h2>
+                    <h2 class="s_section_contain_head_left scrolldownLeft">
+                        出来ました！
+                    </h2>
+                </div>
+        
+                <p class="section_text">
+                    お子様向けコンテンツがたくさんのキッズページを開設しました。<br>
+                    動物園に遊びに行けなくても、そして動物園にいても楽しめる内容となっております。<br>
+                    動物クイズや、現地で見つけた動物をチェックしていくスタンプラリー、<br>
+                    飼育員さんに疑問を解決してもらうコーナーなど盛りだくさんです。<br>
+                    どうぞご家族でご一緒にお楽しみください。
+                </p>
+            </div>
+
+            <div class="s_section_contain_top">
+                <div class="flame_text">
+                    <p>
+                        フェニックス自然動物園を、子どもたちに今よりもっと<br>
+                        もーっと楽しんでもらうために、キッズページって<br>
+                        いうのが出来たんだって。色々あそんだり、おべんきょう<br>
+                        したりできるらしいよ〜。ぼくでもあそべるかなぁ？
+                    </p>
+                </div>
+                <img src="./images/animals/top03.png" alt="">
+            </div>
+
+            <div class="s_section_contain_middle">
+                <img src="./images/animals/top04.png" alt="">
+                <div class="flame_text">
+                    <p>
+                        あら？　そんな面白そうなページが出来たの？<br>
+                        どれどれ……まっ！どうぶつクイズなんてものもあるの？<br>
+                        あらやだ、わたしたち家族の写真まであるじゃないの〜。<br>
+                        うちの子にもさっそく見せてみようかしら。
+                    </p>
+                </div>
+            </div>
+
+            <div class="s_section_contain_bottom">
+                <div class="flame_text">
+                    <p>
+                        ねえおかあさん！ぼくも見たい！ぼくも見たい〜！！<br>
+                        がんばっておべんきょうするからぁ〜！<br>
+                        もうパルマワラビーさんちのみんなのおなまえ、<br>
+                        まちがえないから〜！おかあさん〜〜！
+                    </p>
+                </div>
+                <img src="./images/animals/top05.png" alt="">
+            </div>        
+            <a href="" class="btn s_section_btn">キッズページへ</a>
+        </div>
+
+    </section>
+
+
+    <section class="t_section"><!--セクション03　お気に入り図鑑ピックアップ-->
+        <div class="t_section_head">
+            <div>
+                <h2 class="t_section_head_right head scrollLR">
+                    お気に入りの動物たちで
+                </h2>
+                <h2 class="t_section_head_left head scrollLR">
+                    マイ図鑑を作ろう！
+                </h2>
+            </div>
+    
+            <p class="section_text">
+                    動物園で飼育されている動物たちの紹介図鑑に、お気に入り機能が追加！<br>
+                    会って大好きになったあの子や、これから会いたいあの子たち。<br>
+                    気になる動物たちをチェックして、あなただけのオリジナル図鑑を。
+            </p>
+        </div>
+
+        <div class="t_section_contain"><!--女性ピックアップ-->
+            <div class="t_section_contain_icon">
+                <p class="women">Aさんの場合</p>
+            </div>
+            <div class="t_section_contain_side">
+                <div class="t_section_contain_side_h">
+                    <p class="t_section_contain_side_h_text">
+                        可愛い系の生き物が<br>
+                        好きなんだよね♪
+                    </p>
+                </div>
+                <div class="t_section_contain_side_imgs">
+                    <img src="./images/icon/pickup.png" class="pickup scroll_blockRight" alt="">
+                    <div class="contain">
+                        <img class="fadein" src="./images/animals/my01.png" alt="">
+                        <img class="fadein" src="./images/animals/my02.png" alt="">
+                        <img class="fadein" src="./images/animals/my03.png" alt="">
+                        <img class="fadein" src="./images/animals/my04.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="t_section_contain c_oposite"><!--男性ピックアップ-->
+            <div class="t_section_contain_icon">
+                <p class="men">Bさんの場合</p>
+            </div>
+            <div class="t_section_contain_side s_oposite">
+                <div class="t_section_contain_side_h h_oposite">
+                    <p class="t_section_contain_side_h_text t_oposite">
+                        孫と一緒に<br>
+                        楽しむならやっぱり…
+                    </p>
+                </div>
+                <div class="t_section_contain_side_imgs">
+                    <img src="./images/icon/pickup.png" class="pickup p_oposite scroll_blockLeft" alt="">
+                    <div class="contain">
+                        <img class="fadein" src="./images/animals/my05.png" alt="">
+                        <img class="fadein" src="./images/animals/my06.png" alt="">
+                        <img class="fadein" src="./images/animals/my07.png" alt="">
+                        <img class="fadein" src="./images/animals/my08.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="t_section_contain"><!--少年ピックアップ-->
+            <div class="t_section_contain_icon">
+                <p class="boy">Cくんの場合</p>
+            </div>
+            <div class="t_section_contain_side">
+                <div class="t_section_contain_side_h">
+                    <p class="t_section_contain_side_h_text">
+                        鳥の種類が多すぎて<br>
+                        分からないよ〜！
+                    </p>
+                </div>
+                <div class="t_section_contain_side_imgs">
+                    <img src="./images/icon/pickup.png" class="pickup  scroll_blockRight" alt="">
+                    <div class="contain">
+                        <img class="fadein" src="./images/animals/my09.png" alt="">
+                        <img class="fadein" src="./images/animals/my10.png" alt="">
+                        <img class="fadein" src="./images/animals/my11.png" alt="">
+                        <img class="fadein" src="./images/animals/my12.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section_text t_section_text">
+            どんな図鑑にするかはアナタ次第。<br>
+            来園した際には、ぜひ図鑑を片手に動物たちの様子を観察してみてくださいね。
+        </p>
+
+
+        <a href="" class="btn s_section_btn">マイ動物図鑑へ</a>
+
+    </section>
+
+    <section class="fo_section"><!--セクション04　人気者紹介-->
+        <div class="fo_section_head">
+            <div>
+                <h2 class="fo_section_head_right head scrollup">
+                    フェニックス自然動物園の
+                </h2>
+                <h2 class="fo_section_head_left head scrollup">
+                    人気者はだーれだ？
+                </h2>
+            </div>
+    
+            <p class="section_text">
+                    動物園で飼育されている動物たちの紹介図鑑に、お気に入り機能が追加！<br>
+                    会って大好きになったあの子や、これから会いたいあの子たち。<br>
+                    気になる動物たちをチェックして、あなただけのオリジナル図鑑を。
+            </p>
+        </div>
+        
+        <div class="container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider01.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider02.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider03.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider04.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider05.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/animals/slider06.png" alt="" />
+                    </div>
+                </div>
+            </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        </div>
+
+        <a href="./popular/index.html" class="btn fo_section_btn">人気者紹介へ</a>
+    </section>
+
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>

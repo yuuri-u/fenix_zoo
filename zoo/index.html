@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<!-- 上に戻るボタンの挙動設定 -->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div id="page-top"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href="../index.html"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="../information/index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="./index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../park/index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../shop/index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../map/index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_head">
+            <h2>動物園</h2>
+        </div>
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#seeJump">みる</a>
+            </div>
+            <div class="btn">
+                <a href="#touchJump">さわる</a>
+            </div>
+            <div class="btn">
+                <a href="#learnJump">まなぶ</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物たち</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="section"><!--セクション1　見る-->
+        <div id="seeJump"></div>
+        <h3 class="section_head">みる（ショーの紹介）</h3>
+
+        <div class="container"><!--フラミンゴショー-->
+            <h4>フライング・フラミンゴショー</h4>
+            <div class="container_flex">
+                <img src="./images/see01.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        ①11時30分 ②13時30分 ③15時　各約10分間<br>
+                        場所：フラミンゴショー会場
+                    </p>
+                    <p class="bottom">
+                        昭和46年以来、毎日のイベントとして行ってきたフラミンゴショーが平成24年2月11日から「フライング・フラミンゴショー」へと新しくなりました。<br>
+                        ショー会場は会場全体がネットで覆われ、観客席も新しくなりました。チリーフラミンゴ約70羽による、当園オリジナルの優美なフラミンゴのショーをご覧ください。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--ヤギの大行進-->
+            <h4>ヤギの大行進</h4>
+            <div class="container_flex">
+                <img src="./images/see02.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        ①10時〜 ②16時〜<br>
+                        場所：観覧席の寝室←→こども動物村
+                    </p>
+                    <p class="bottom">
+                        10時は観覧橋内部の寝室からこども動物村まで、16時にはこども動物村から寝室まで戻ります。<br>
+                        約50頭がその間約180mを駆け足で大行進します。一生懸命走るヤギのかわいい姿をぜひご覧ください。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--動物たちのお食事タイム-->
+            <h4>動物たちのお食事タイム</h4>
+            <div class="container_flex">
+                <img src="./images/see03.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        10時30分：ワオキツネザル（ワオキツネザルの島にて）<br>
+                        12時：ペンギン・ペリカン（ペンギン・ペリカン展示場）<br>
+                        13時：キリン（水鳥ふれあいコーナー横のキリン観覧所）<br>
+                        15時30分：猛獣（トラ・ライオン展示場）
+                    </p>
+                    <p class="bottom">
+                        動物たちに餌を与えながら飼育係がガイドを行います。<br>
+                        動物たちがエサを食べる様子を間近で観察しながら飼育員のお話に耳を傾けてください。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--チンパンジーガイド-->
+            <h4>チンパンジーガイド</h4>
+            <div class="container_flex">
+                <img src="./images/see04.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        12時30分　 約10分間<br>
+                        場所：チンパンジーの森(新チンパンジー展示場）
+                    </p>
+                    <p class="bottom">
+                        新しくなったチンパンジー展示場で、飼育員がチンパンジーの特性や個性などを紹介します。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--ゾウさんガイド-->
+            <h4>ゾウさんガイド</h4>
+            <div class="container_flex">
+                <img src="./images/see05.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        11時〜<br>
+                        場所：アジアゾウ展示場
+                    </p>
+                    <p class="bottom">
+                        アジアゾウの体のつくりや生態について飼育員が説明しながら、アジアゾウの特性の説明に合わせて、ゾウさんがパフォーマンス。<br>
+                        足を上げて足の裏を見せたり、お辞儀をしてくれたりします。シャッターチャンスをお見逃しなく!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#seeJump">みる</a>
+            </div>
+            <div class="btn">
+                <a href="#touchJump">さわる</a>
+            </div>
+            <div class="btn">
+                <a href="#learnJump">まなぶ</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物たち</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section"><!--セクション2　さわる-->
+        <div id="touchJump"></div>
+        <h3 class="section_head">さわる（ふれあいイベントの紹介）</h3>
+
+        <div class="container"><!--ゾウさんとお散歩＆記念撮影-->
+            <h4>ゾウさんとお散歩＆記念撮影</h4>
+            <div class="container_flex">
+                <img src="./images/touch01.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        14時〜<br>
+                        コース：アジアゾウ展示場～ゾウさん広場
+                    </p>
+                    <p class="bottom">
+                        アジアゾウ展示場とゾウさん広場の間の約100mを、アジアゾウのみどりちゃんと一緒にお散歩しませんか？<br>
+                        お散歩の後は、一緒に写真撮影！<br>
+                        係員が撮影しますので、ご家族みなさんで記念の１枚をどうぞ！
+                    </p>
+                    <p class="attension">
+                        ※カメラはご持参ください<br>
+                        ※会場に並んでいただいた順番での撮影になります<br>
+                        ※同行する飼育員の指示にしたがって下さい
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--小動物とのふれあい-->
+            <h4>小動物とのふれあい</h4>
+            <div class="container_flex">
+                <img src="./images/touch02.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        13時30分〜14時<br>
+                        場所：ゾウさん広場
+                    </p>
+                    <p class="bottom">
+                        かわいい小動物のぬくもりを感じていただけるふれあいです。<br>
+                        ふれあいの前後は手洗いをお願いしております。
+                    </p>
+                    <p class="attension">
+                        ※参加する動物は体調等によって変更する場合がございます<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container"><!--ポニー体験乗馬-->
+            <h4>ポニー体験乗馬</h4>
+            <div class="container_flex">
+                <img src="./images/touch03.png" alt="">
+                <div class="text">
+                    <p class="top">
+                        不定期（週末）開催　1回200円<br>
+                        場所：芝生広場
+                    </p>
+                    <p class="bottom">
+                        芝生広場をミニコースにして、飼育員が支える形でポニーに乗ってお散歩します。<br>
+                        不定期開催になりますので、園内の各掲示板の案内をご覧ください。
+                    </p>
+                    <p class="attension">
+                        ※小学3年生までのお子様がお楽しみいただけます<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#seeJump">みる</a>
+            </div>
+            <div class="btn">
+                <a href="#touchJump">さわる</a>
+            </div>
+            <div class="btn">
+                <a href="#learnJump">まなぶ</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物たち</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section learn"><!--セクション3　まなぶ-->
+        <div id="learnJump"></div>
+        <h3 class="section_head">まなぶ（楽しく学ぶプログラム）</h3>
+        <div class="sub_menu"><!--項目ジャンプメニュー-->
+            <a href="#guide">動物ショートガイド</a>　/　
+            <a href="#talk">動物講話</a>　/　
+            <a href="#walk">動物園ガイドウォーク</a>　/　
+            <a href="#lesson">動物飼育体験講座</a>　/　
+            <a href="#practice">各種実習</a>　/　
+            <a href="#seminer">動物出前講座</a>　/　
+            <a href="#interaction">出張ふれあい動物園</a>
+        </div>
+        <div class="text"><!--説明　注意書き-->
+            <p>
+                各種学校・各種団体の皆様を対象に、七つの動物教育プログラムをご用意しています。お気軽にご相談下さい。<br>
+                先着順受付になります。
+            </p>
+            <p>
+                また、当園のスケジュール等でご希望の日程で実施できない場合がありますので予めご了承ください。
+            </p>
+            <p class="attension">
+                ※おからだの不自由な方等は、適切なプログラムになるように個別にご相談させていただきます。<br>
+                ※新型コロナウイルス感染症などの事情により、内容を変更したり、お受けできない場合があります。
+            </p>
+            <p>
+                ●詳しくは当園の教育普及担当までお問い合わせください。<br>
+                電話：0985-39-1306<br>
+                Fax： 0985-39-1459<br>
+                メール：info@miyazaki-city-zoo.jp
+            </p>
+        </div>
+
+        <div class="container"><!--動物ショートガイド-->
+            <div id="guide"></div>
+            <h4>動物ショートガイド</h4>
+            <p>飼育スタッフが園内や動物展示場前で、動物の特徴やエサなどの説明を行います。飼育担当ならではのお話をします。</p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">制限なし</div>
+                <div class="item">定員</div>
+                <div class="item">1ヶ所30名　/　小学校低学年以下の場合は40名以内</div>
+                <div class="item">実施時間</div>
+                <div class="item">動物の種類によって変動します</div>
+                <div class="item">所要時間</div>
+                <div class="item">15分以内</div>
+                <div class="item">その他</div>
+                <div class="item">複数のクラスなどで受け入れ可能人数を超過する場合はご相談ください</div>
+            </div>
+        </div>
+
+        <div class="container"><!--動物講話-->
+            <div id="talk"></div>
+            <h4>動物講話</h4>
+            <p>園内の「どうぶつ情報プラザ」内で、スタッフが、「動物園の歴史と役割」「動物園の概要」「野生動物絶滅の歴史」「飼育員の仕事や裏話」「動物の子育て」「ダチョウの卵のふしぎ」などのテーマで、スライドを交えてお話します。</p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">小学生以上</div>
+                <div class="item">定員</div>
+                <div class="item">20名〜100名　/　小学校低学年の場合は40名以内</div>
+                <div class="item">実施時間</div>
+                <div class="item">9時30分〜16時30分</div>
+                <div class="item">所要時間</div>
+                <div class="item">30分〜120分</div>
+                <div class="item">その他</div>
+                <div class="item">修学旅行でも利用可能です</div>
+            </div>
+        </div>
+
+        <div class="container"><!--動物園ガイドウォーク-->
+            <div id="walk"></div>
+            <h4>動物園ガイドウォーク</h4>
+            <p>スタッフが園内を一緒に歩きながら、動物の解説を行い、動物園の見どころをお知らせします。</p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">制限なし</div>
+                <div class="item">定員</div>
+                <div class="item">20名まで</div>
+                <div class="item">実施時間</div>
+                <div class="item">9時45分〜15時00分</div>
+                <div class="item">所要時間</div>
+                <div class="item">30分〜60分</div>
+            </div>
+        </div>
+
+        <div class="container lesson"><!--動物飼育体験講座-->
+            <div id="lesson"></div>
+            <h4>動物飼育体験講座</h4>
+            <p>職場体験学習・インターンシップ対応。動物舎の清掃、エサ作り、給餌などを体験していただきます。<br>
+                最終日の夕方には園長等による説明があり、生徒の皆さんのご質問にもお答えします。
+            </p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">中学生・高校生</div>
+                <div class="item">定員</div>
+                <div class="item">1日あたり6名前後</div>
+                <div class="item">実施時間</div>
+                <div class="item">8時30分〜15時</div>
+                <div class="item">必要書類</div>
+                <div class="item">当園規定の申請書（誓約書）の提出が必要となります</div>
+            </div>
+        </div>
+
+        <div class="container practice"><!--各種実習-->
+            <div id=practice></div>
+            <h4>各種実習</h4>
+            <p>飼育実習、獣医学実習、博物館実習、社会人研修でご利用ください。</p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">専門学校生・大学生・社会人</div>
+                <div class="item">定員</div>
+                <div class="item">若干名</div>
+                <div class="item">実施時間</div>
+                <div class="item">8時45分〜17時</div>
+                <div class="item">実習期間</div>
+                <div class="item">5日間〜1ヶ月</div>
+                <div class="item">必要書類</div>
+                <div class="item">複数のクラスなどで受け入れ可能人数を超過する場合はご相談ください</div>
+            </div>
+        </div>
+
+        <div class="container"><!--動物出前講座-->
+            <div id="seminer"></div>
+            <h4>動物出前講座</h4>
+            <p>ご希望の会場までスタッフが出向き、ご依頼に応じていろいろなお話をします（リモート可）。<br>
+                修学旅行の事前学習にもご利用ください。
+            </p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">制限なし</div>
+                <div class="item">定員</div>
+                <div class="item">制限なし</div>
+                <div class="item">実施時間</div>
+                <div class="item">10時〜16時</div>
+                <div class="item">所要時間</div>
+                <div class="item">30分〜120分</div>
+            </div>
+        </div>
+
+        <div class="container interaction"><!--出張ふれあい動物園-->
+            <div id="interaction"></div>
+            <h4>出張ふれあい動物園</h4>
+            <p>当園が飼育展示しているヤギ、ウサギ、モルモットなどをご希望の会場までスタッフが運び、ふれあいやお話などをいたします。</p>
+            <div class="container_grid">
+                <div class="item">対象</div>
+                <div class="item">制限なし</div>
+                <div class="item">定員</div>
+                <div class="item">1ヶ所30名　/　小学校低学年以下の場合は40名以内</div>
+                <div class="item">実施時間</div>
+                <div class="item">11時〜15時</div>
+            </div>
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#seeJump">みる</a>
+            </div>
+            <div class="btn">
+                <a href="#touchJump">さわる</a>
+            </div>
+            <div class="btn">
+                <a href="#learnJump">まなぶ</a>
+            </div>
+            <div class="btn">
+                <a href="#animalJump">動物たち</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section animal"><!--セクション3　動物たち-->
+        <div id="animalJump"></div>
+        <h3 class="section_head">動物たち</h3>
+        <p>
+            宮崎市フェニックス自然動物園で暮らしている、個性豊かな動物たちの図鑑です。<br>
+            お気に入り機能を追加し、より使いやすくなった図鑑を片手に、動物園を最大限にお楽しみください！
+        </p>
+
+        <div class="grid">
+            <img src="./images/animal01.png" alt="">
+            <img src="./images/animal02.png" alt="">
+            <img src="./images/animal03.png" alt="">
+            <img src="./images/animal04.png" alt="">
+        </div>
+
+        <div class="main_menu">
+            <div class="btn">
+                <a href="../pictorialbook/index.html">動物図鑑へ</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>
