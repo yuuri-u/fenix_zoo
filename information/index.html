@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<script src="./script.js"></script>
+<!--上に戻るボタンの挙動設定-->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div id="page-top"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header-inner">
+            <h1 class="logo"><a href="../index.html"><img src="./images/logo.png" alt="ロゴ"></a></h1>
+
+            <nav class="nav nav_pc"><!--ナビゲーション-->
+                <ul class="nav_list">
+                    <li class="nav_list_item">
+                        <a href="./index.html" class="icon_info">
+                            ご案内
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../zoo/index.html" class="icon_zoo">
+                            動物園
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../park/index.html" class="icon_park">
+                            遊園地
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../shop/index.html" class="icon_shop">
+                            ショップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../map/index.html" class="icon_map">
+                            マップ
+                        </a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="../kids/index.html" class="icon_kids">
+                            キッズ
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav_side">
+                    <li class="nav_side_item"><a href="">サイトマップ</a></li>
+                    <li class="nav_side_item"><a href="">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_head">
+            <h2>宮崎市フェニックス自然動物園について</h2>
+        </div>
+        <div class="main_menu">
+            <div class="btn">
+                <a href="#featuresJump">特色</a>
+            </div>
+            <div class="btn">
+                <a href="#historyJump">歴史</a>
+            </div>
+            <div class="btn">
+                <a href="#directorJump">園長から</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="section features"><!--セクション1　特色-->
+        <div id="featuresJump"></div>
+        <h3 class="section_head">特色</h3>
+        <div class="features_grid">
+            <div class="features_grid_item">
+                <h4>フラミンゴのショー</h4>
+                <img src="./images/features01.png" alt="">
+                <p>1971年の開演から始まった「フラミンゴショー」を引き継ぎ、現在は「フライングフラミンゴショー」として進化しました。先頭に付いていく集団性を利用した、70羽の色鮮やかなチリーフラミンゴによるショーは圧巻の一言。</p>
+            </div>
+            <div class="features_grid_item">
+                <h4>野生動物の混合飼育</h4>
+                <img src="./images/features02.png" alt="">
+                <p>開園当初から、動物を自然に近い状態で展示することを大切にし、集団で飼う「群れ飼育」だけでなく、国内の動物園に先駆けて、種が異なる動物を同じ空間で展示する「混合飼育」にも力を入れてきました。</p>
+            </div>
+            <div class="features_grid_item">
+                <h4>希少動物の繁殖</h4>
+                <img src="./images/features03.png" alt="">
+                <p>動物園の存在意義の一つでもある、「種の保存」の観点から、希少動物の繁殖に力を入れています。1974年に国内初のダチョウの繁殖に成功したことを皮切りに、現在に至るまで、国内外を問わず、希少動物の研究に取り組んでいます。</p>
+            </div>
+            <div class="features_grid_item">
+                <h4>チンパンジーの森</h4>
+                <img src="./images/features04.png" alt="">
+                <p>「動物の生活を豊かにする配慮（アニマル・ウェルフェア）」に基づいて構成された3つのエリアで、のびのびと遊びまわるチンパンジーの様子が観察できます。チンパンジーの奥深い習性を観察出来る新施設です。</p>
+            </div>
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#featuresJump">特色</a>
+            </div>
+            <div class="btn">
+                <a href="#historyJump">歴史</a>
+            </div>
+            <div class="btn">
+                <a href="#directorJump">園長から</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section history"><!--セクション2　歴史-->
+        <div id="historyJump"></div>
+        <h3 class="section_head">歴史</h3>
+        <h4>フェニックス自然動物園50年の歩み</h4>
+
+        <div class="img">
+            <img src="./images/history.png" alt="">
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#featuresJump">特色</a>
+            </div>
+            <div class="btn">
+                <a href="#historyJump">歴史</a>
+            </div>
+            <div class="btn">
+                <a href="#directorJump">園長から</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section director"><!--セクション3　園長から-->
+        <div id="directorJump"></div>
+        <h3 class="section_head">園長からのご挨拶</h3>
+
+        <div class="director_flex"><!--園長概略-->
+            <img src="./images/director.jpeg" alt="">
+            <div class="text">
+                <p class="top">
+                    園長　竹田正人
+                </p>
+                <p class="bottom">
+                    島根県出身。大阪府立大学獣医学科卒業。<br>
+                    天王寺動物園（大阪市）で獣医師として23年間の勤務を経て、平成25年4月に宮崎市フェニックス自然動物園へ。<br>
+                    飼育課長を経て2018年から副園長となり、培ってきた知恵と知識で同園を盛り立ててきた。<br>
+                    同園にはアジアゾウやボルネオオランウータンなど１個体のみで飼育される動物もいることから、希少動物を飼う園の義務として種の保全、繁殖の努力は怠れないことや、関係機関と連携し可能性を探っていくことを使命とする。<br>
+                    観光誘客に寄与する魅力的で特色ある園にすること、展示を工夫し、来園者と動物との距離を感じさせない空間を作ることを目標としている。
+                </p>
+            </div>
+        </div>
+
+        <div class="text"><!--園長からの言葉-->
+            <p>
+                　この度、令和3年4月1日付で園長に就任いたしました竹田正人（たけだまさと）です。<br>
+                　当園は昭和46年（1971年）3月24日にフェニックス国際観光株式会社の動物園と遊園地およびプールを設置した総合レジャーランド「フェニックス自然動物園」としてオープンし、今年で50周年を迎えます。<br>
+                　その後、2001年に「宮崎市フェニックス自然動物園」として再開園し、現在に至っています。<br>
+                　当園のコンセプトは野生を念頭に置いた群れ動物の混合展示で、オープン当時にはアフリカから運んできた多くのマサイキリン、グラントシマウマ、エランド、オグロヌーなどの草食動物や、ダチョウやホロホロチョウなどの鳥類が一緒に展示されていました。このコンセプトは今後も可能な限り継承していくつもりです。<br>
+                　また、開園当時から続いているフラミンゴショーも更に進化させるべく、2012年にフラミンゴショー会場の天井と周囲にネットを張ってフライングケージ型に改築し、国内唯一のフライングフラミンゴショーに進化させました。<br>
+                　一方、希少動物の繁殖にも取り組み、1974年に国内初のダチョウ繁殖に成功しました。また、国内で飼育されている4種類のフラミンゴ（チリーフラミンゴ、ベニイロフラミンゴ、ヨーロッパフラミンゴ、コフラミンゴ）すべての繁殖にも成功しています。現在フラミンゴの飼育数は300羽を超え、まさに「フラミンゴ王国」といっても過言ではありません。<br>
+                　近年では、宮崎県の県鳥であるコシジロヤマドリの繁殖と展示や、未だにその生態が詳しく分かっていないミゾゴイの保護と飼育下繁殖にも取り組み成功を収めています。更に、環境省と公益社団法人日本動物園水族館協会、宮崎大学が連携して取り組む保全事業の一環として、国の天然記念物で絶滅の恐れのあるアマミトゲネズミの飼育下繁殖に着手し、２０１８年に世界初の繁殖に成功しました。このように、海外の希少動物のみならず、郷土や日本の希少動物の繁殖研究にも取り組んでいます。<br>
+                　2019年3月には、国内で２番目の飼育頭数を誇るチンパンジーの新しい施設「チンパンジーの森」ができました。この施設は、飼育担当者を交えたプロジェクトチームから生まれた新たな発想をベースにしたものです。チンパンジーの生活を豊かにするため３つの異なる展示場を配置し、将来的には彼らの生態を意識して、３つの群れを３つの展示場で交互に展示する予定です。今後も老朽化に伴う動物舎の建て替えの際には、動物の生息地域を考えたレイアウトのもと、動物の福祉に配慮し、来園者の方々にも彼らの生息地である自然を感じてもらえるような動物舎を作って行きたいと考えています。<br>
+                　最後に、開園50周年を記念した様々なイベントを簡単にご紹介します。既に、「宮崎市フェニックス自然動物園年表展」として、当園の50年の歩み一覧表にして動物園ゲートを入ったところにある休憩室にて掲示しております。この休憩室の横には、50周年を記念したフォトスポットを設置しました。実物大のアジアゾウ「みどり」の写真をバックに記念撮影してください。また、宮崎県出身のイラストレーター・ヒダカマコト氏とのコラボでブックカバーを作って、市内の書店や図書館に配布しています。更に秋からは、より濃厚なイベントを数多く開催する予定ですので、ホームページ等をご注目いただき、奮ってご参加ください。<br>
+                　未だ、新型コロナウイルス感染症（Covidー19）が猛威を奮っており、様々な場面での制限・制約がかかっています。当園でも一部の展示やイベントなどの実施を変更、休止していますが、十分な感染症対策を実施して、皆様のご来園をお待ちしております。<br>
+                　これからも、市民のみなさんに愛され楽しく学べる動物園、観光誘客に寄与できる魅力的な動物園、動物のため動物福祉に配慮した動物園、希少野生動物の保護と自然環境保全を担う動物園を目指して職員一丸となって歩むつもりですので、引き続きご支援とご愛顧を賜りますよう、よろしくお願いいたします。
+            </p>
+        </div>
+
+        <div class="main_menu"><!--ジャンプメニュー-->
+            <div class="btn">
+                <a href="#featuresJump">特色</a>
+            </div>
+            <div class="btn">
+                <a href="#historyJump">歴史</a>
+            </div>
+            <div class="btn">
+                <a href="#directorJump">園長から</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+                <div class="f_inner_info_text">
+                    <div>
+                        <p class="top">宮崎市フェニックス自然動物園</p>
+                        <p class="bottom">開園時間　午前9：00〜午後5時（入園は午後4時半まで）</p>
+                    </div>
+                    <address class="address">
+                        <p>〒880-0122 宮崎県宮崎市大字塩路字浜山3083-42</p>
+                        <p>TEL：0985-39-1306</p>
+                        <p>FAX：0985-39-1306</p>
+                    </address>
+                </div>
+            </div>
+            <nav class="f_inner_nav">
+                <ul class="f_inner_nav_list">
+                    <li class="item">
+                        <a href="">サイトマップ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">よくあるご質問</a>
+                    </li>
+                    <li class="item">
+                        <a href="">お問い合わせ</a>
+                    </li>
+                    <li class="item">
+                        <a href="">個人情報保護方針</a>
+                    </li>
+                </ul>
+                <ul class="f_innner_nav_link">
+                    <li class="item"><a href="">フローランテ宮崎</a></li>
+                    <li class="item"><a href="">宮崎市役所</a></li>
+                </ul>
+            </nav>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+</body>
