@@ -1,0 +1,1013 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+    font-family: '筑紫A丸ゴシック', sans-serif, 'Mochiy Pop One', cursive; 
+    color: #2E2E2E;
+}
+
+/*フォントクラス指定ここから*////////////////////////
+.karuta {
+    font-family: 'AB-karuta_bold';
+}
+
+.kokoro {
+    font-family: 'AB-kokoro_no3';
+}
+
+.mottie {
+    font-family: 'モッチーポップ';
+}
+
+.vdl {
+    font-family: 'VDL ロゴJrブラック';
+}
+/*フォントクラス指定ここまで*/////////////////////////
+
+h1, ul {
+    margin: 0 ;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+h2, p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6em;
+}
+
+h4 {
+    position: relative;
+    width: fit-content;
+}
+h4:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 4px;
+    background-color: #F8B851;
+    bottom: 1px;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #2E2E2E;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    margin: 50px auto;
+    padding: 8px 15px;
+    border-radius: 30px;
+    line-height: 1.8em;
+    background-color: #85B783;
+    color: #FFF;
+    font-weight: bold;
+}
+
+a:hover {
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+
+/*見出し＆説明テキスト*/
+.section_text {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+/*上へ戻るボタン*/
+#page-top {
+    position: fixed;
+    z-index: 50;
+    right: 60px;
+}
+#page-top a {
+    padding: 10px 20px;
+
+    img {
+        width: 60px;
+    }
+}
+#page-top a:hover {
+    opacity: 0.6;
+    transition: opacity .5s;
+}
+
+/*ヘッダー*////////////////////////////////////////////////////
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 200px;
+    height: 189px;
+    font-size: 1.4em;
+    font-family: 'AB-kokoro_no3';
+    background: url(./images/headerbg.png) no-repeat center/cover;
+    background-size: 100%;
+
+    &_inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-left: 5px;
+
+        a {
+            color: #FFF;
+        }
+        a:hover {
+            transform: scale(1.08);
+            transition: .3s ease-in-out;  
+        }
+    }
+}
+
+/*メイン*//////////////////////////////////////////////////////
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url(./images/background.png) center/cover;
+
+    &_catchcopy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        gap: 5px;
+
+        .top {
+            font-size: 1.5em;
+            color:#053903
+        }
+
+        h1 {
+            font-size: 4.0em;
+            color: #F8B851;
+        }
+    }
+
+    .rightFlame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        background: url(./images/flame.png) no-repeat center/cover;
+
+        p {
+           margin: -10px 0 0 5px;
+        }
+    }
+
+    .contentsLink {
+        position: relative;
+
+        img {
+            width: 400px;
+        }
+
+        .text {
+            font-size: 1.8em;
+        }
+
+        &_quiz {
+            position: absolute;
+            left: 23%;
+
+            div {
+                position: relative;
+            }
+            div:before {
+                position: absolute;
+                content: "どうぶつクイズ";
+                color: #F8B851;
+                left: 20px;
+            }
+        }
+        &_stamp {
+            position: absolute;
+            top: 40px;
+            right: 27%;
+
+            img {
+                width: 350px;
+            }
+
+            div {
+                position: relative;
+            }
+            div:before {
+                position: absolute;
+                content: "どうぶつ\Aスタンプラリー";
+                white-space: pre;
+                text-align: center;
+                color: #F8B851;
+                top: -70px;
+                left: 70px;
+            }
+        }
+        &_teach {
+            position: absolute;
+            top: 300px;
+            left: 13%;
+
+            div {
+                position: relative;
+            }
+            div:before {
+                position: absolute;
+                content: "おしえて！\Aしいくいんさん";
+                white-space: pre;
+                color: #F8B851;
+                left: -30px;
+            }
+        }
+        &_voice {
+            position: absolute;
+            top: 200px;
+            left: 38%;
+
+            img {
+                width: 350px;
+            }
+
+            div {
+                position: relative;
+            }
+            div:before {
+                position: absolute;
+                content: "あの子の声は\Aどんな声？";
+                white-space: pre;
+                color: #F8B851;
+                top: 100px;
+                left: -50px;
+            }
+        }
+        &_family {
+            position: absolute;
+            top: 280px;
+            right: 20%;
+
+            div {
+                position: relative;
+            }
+            div:before {
+                position: absolute;
+                content: "どうぶつの\Aかぞくを\A見てみよう！";
+                white-space: pre;
+                color: #F8B851;
+                top: 20px;
+                right: -50px;
+            }
+        }
+
+        &_treeLeft {
+            position: absolute;
+            top: 100px;
+            left: 12%;
+        }
+        &_treeCenter {
+            position: absolute;
+            top: -35px;
+            left: 45%;
+            .treeCenter {
+                width: 130px;
+            }
+        }
+        &_treeRight{
+            position: absolute;
+            top: 100px;
+            right: 18%
+        }
+
+        .tree {
+            width: 150px;
+        }
+    }
+}
+
+/*セクション共通*///////////////////////////////////////////////
+.section {
+    margin: 150px auto;
+
+    #quizJump, #stampJump, #teachJump, #voiceJump, #familyJump {
+        padding-top: 80px;
+    }
+
+    &_title {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: fit-content;
+        margin:0 auto;
+
+        &_number_one {
+            position: absolute;
+            z-index: 10;
+            top: -50px;
+            left: -6%;
+            transform: rotate(-20deg);
+            font-size: 3.5em;
+        }
+        &_number {
+            position: absolute;
+            z-index: 10;
+            top: -50px;
+            left: -10%;
+            transform: rotate(-20deg);
+            font-size: 3.5em;
+        }
+        
+
+        &_head {
+            font-size: 5em;
+            color: #F8B851;
+        }
+        &_text {
+            margin: 50px 0;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .attention {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    }
+
+    &_title:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -70px;
+        left: -15%;
+        width: 130px;
+        height: 130px;
+        background: url(./images/noFlame.png) no-repeat center/cover;
+    }
+
+    /*画面左右の動物写真の配置*/
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+
+        &_left {
+            margin-top: -200px;
+        }
+
+        a {
+            height: fit-content;
+        }
+
+        &_right {
+            margin-top: -140px;
+        }
+    }
+}
+
+/*セクション01　どうぶつクイズ*///////////////////////////////////
+.quiz {
+    &_list {
+        position: relative;
+        width: 700px;
+        margin: 50px auto;
+
+        .orange {
+            background-color: #FFF5F1;
+        }
+        .green {
+            background-color: #F0FFF0;
+        }
+
+        &_item {
+            position: relative;
+            margin: 40px 0;
+            padding: 10px 30px;
+            border-radius: 30px;
+
+            .number {
+                position: absolute;
+                z-index: 10;
+                top: -16px;
+                left: -2.3%;
+                transform: rotate(-20deg);
+                font-size: 2em;
+                color: #FFF;
+            }
+            .numberTen {
+                left: -3.5%;
+            }
+
+            .question {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                height: 120px;
+                cursor: pointer;
+
+                .select {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 15px;
+                    margin: 15px 0;
+                    font-family: 'Mochiy Pop One';
+                    font-size: 1em;
+
+                    &_text:before {
+                        content: '';
+                        width: 60px;
+                        height: 60px;
+                        background-color: #F53166;
+                        border-radius: 20px;
+                        margin-right: 10px;
+                        padding: 5px 10px;
+                        color: #FFF;
+                    }
+                    .select_a:before {
+                        content: 'A';
+                    }
+                    .select_b:before {
+                        content: 'B';
+                    }
+                    .select_c:before {
+                        content: 'C';
+                    }
+                }
+            }
+            
+            .arrowRed, .arrowGreen {
+                transition: all .5s ease;
+            }
+            .arrowRed:before, .arrowGreen:before {
+                content: '';
+                position: absolute;
+                top: 45%;
+                right: -3.5%;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+            .arrowRed:before{
+                background: #B40A0A;
+            }
+            .arrowGreen:before {
+                background-color: #547658;
+            }
+
+            .arrowRed:after, .arrowGreen:after {
+                content: '';
+                position: absolute;
+                top: 48%;
+                right: -2.8%;
+                width: 7px;
+                height: 7px;
+                border-right: solid 3px #FFF;
+                border-bottom: solid 3px #FFF;
+                transform: rotate(45deg);
+                transition: all .3s ease;
+            }
+        
+            .arrowRed:after {
+                background-color: #B40A0A;
+            }
+            .arrowGreen:after {
+                background-color: #547658;
+            }
+
+            .arrowRed.open:after, .arrowGreen.open:after {
+                top: 50.5%;
+                transform: rotate(225deg)
+            }
+        }
+
+        &_item:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: -33px;
+            left: -7%;
+            width: 80px;
+            height: 80px;
+            background: url(./images/nobg.png) no-repeat center/cover;
+        }
+
+
+        .answer {
+            display: none;
+            position: relative;
+            margin: 20px 0 0;
+            font-size: 1.2;
+            font-family: 'Mochiy Pop One';
+
+            &_text {
+                padding: 10px 0;
+                font-size: 1em;
+                font-family: '筑紫A丸ゴシック';
+            }
+
+            &_a:before, &_b:before, &_c:before {
+                content: '';
+                width: 60px;
+                height: 60px;
+                background-color: #F53166;
+                border-radius: 20px;
+                margin-right: 10px;
+                padding: 5px 10px;
+                color: #FFF;
+            }
+            &_a:before {
+                content: 'A';
+            }
+            &_b:before {
+                content: 'B';
+            }
+            &_c:before {
+                content: 'C';
+            }
+        }
+
+        .answer:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            width: 650px;
+            border: solid 1px #383838;
+        }
+    }
+}
+
+/*セクション02　スタンプラリー*///////////////////////////////////
+.stamp {
+    &_grid {
+        width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 100px;
+        margin: 120px auto 0;
+
+        .top {
+            margin-top: -50px;
+        }
+
+        p {
+            font-family: 'AB-kokoro_no3';
+        }
+
+        &_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            
+            .name p {
+                width: fit-content;
+                line-height: 1.6em;
+                padding: 7px 15px;
+                background-color: #F8B851;
+                color: #FFF;
+                border-radius: 25px;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            .imageItem {
+                position: relative;
+
+                &_yet {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 65%;
+                    right: -8%;
+                    z-index: 1;
+                    width: 90px;
+                    height: 90px;
+                    background-color: #FFEDDB;
+                    border-style: none;
+                    border-radius: 50%;
+                    font-size: 1.3em;
+                    font-family: 'AB-kokoro_no3';
+                    cursor: pointer;
+                }
+
+                &_yet.active {
+                    background-color: #F8B851;
+                }
+            }
+        }
+    }
+}
+
+/*セクション03　教えて飼育員さん*//////////////////////////////////
+.teach {
+    img {
+        width: 350px;
+    }
+
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-row-gap: 80px;
+        width: 1200px;
+        margin: 0 auto;
+
+        &_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 200px;
+            width: 100%;
+
+            p {
+                position: relative;
+                font-size: 1.4em;
+                text-align: center;
+            }
+
+            &_text, &_opposite {
+                position: relative;
+                width: 100%;
+            }
+            /*質問吹き出し*/
+            &_text:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: -38%;
+                left: -8%;
+                width: 700px;
+                height: 250px;
+                background: url(./images/voiceFlame01.png) no-repeat center/cover;
+                background-size: 100%;
+            }
+            /*答え吹き出し*/
+            &_opposite:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: -21%;
+                left: -2%;
+                width: 700px;
+                height: 250px;
+                background: url(./images/voiceFlame02.png) no-repeat center/cover;
+                background-size: 100%;
+            }
+
+            .question_text:before {
+                content: '';
+                position: absolute;
+                z-index: 5;
+                top: -60%;
+                right: -2%;
+                width: 150px;
+                height: 100px;
+                background: url(./images/quesFlame.png) no-repeat center/cover;
+                background-size: 100%;
+            }
+            .question_text:after {
+                content: 'ギモン';
+                position: absolute;
+                z-index: 5;
+                top: -38%;
+                right: 2%;
+                color: #FFF;
+                font-size: 1.5em;
+                font-family: 'AB-kokoro_no3';
+                transform: rotate(30deg);
+            }
+
+            .answer_text:before {
+                content: '';
+                position: absolute;
+                z-index: 5;
+                top: -27%;
+                left: -14%;
+                width: 155px;
+                height: 100px;
+                background: url(./images/ansFlame.png) no-repeat center/cover;
+                background-size: 100%;
+            }
+            .answer_text:after {
+                content: 'アンサー';
+                position: absolute;
+                z-index: 5;
+                top: -10%;
+                left: -12%;
+                color: #FFF;
+                font-size: 1.4em;
+                font-family: 'AB-kokoro_no3';
+                transform: rotate(-25deg);
+            }
+
+            /*吹き出しアニメーション*/
+            .imageAnime.blockIn {
+                animation: poyopoyo 2s ease-out infinite;
+                opacity: 1;
+            }
+            @keyframes poyopoyo {
+                0%, 40%, 60%, 80% {
+                    transform: scale(1.0);
+                }
+                50%, 70% {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}
+
+/*セクション04　あの子の声はどんな声*///////////////////////////////
+.voice {
+    img {
+        width: 350px;
+    }
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr);
+        grid-column-gap: 50px;
+        grid-row-gap: 100px;
+        width: 1200px;
+        margin: 0 auto;
+
+        &_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 180px;
+
+            &_image {
+                .name {
+                    display: block;
+                    position: relative;
+                    width: fit-content;
+                    margin: 0 auto;
+                    font-size: 2em;
+                }
+                .name:after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    width: 100%;
+                    height: 10px;
+                    background-color: #F8B851;
+                    bottom: 11px;
+                    left: 0;
+                    border-radius: 5px;
+                }
+            }
+
+            &_contents {
+                .text {
+                    width: 550px;
+
+                    p{
+                        position: relative;
+                        font-size: 1.5em;
+                        text-align: center;
+                    }
+                    p:after {
+                        content: '';
+                        position: absolute;
+                        z-index: 5;
+                        top: -45px;
+                        left: -12%;
+                        width: 650px;
+                        height: 160px;
+                        background: url(./images/voiceFlame03.png) no-repeat center/cover;
+                        background-size: 100%;
+                    }
+                    .opposite {
+                        position: relative;
+                        font-size: 1.5em;
+                        text-align: center;
+                    }
+                    .opposite:after {
+                        content: '';
+                        position: absolute;
+                        z-index: 5;
+                        top: -45px;
+                        left: -6%;
+                        width: 620px;
+                        height: 160px;
+                        background: url(./images/voiceFlame04.png) no-repeat center/cover;
+                        background-size: 100%;
+                    }
+                }
+
+                audio {
+                    width: 450px;
+                    max-width: 100%;/* スマホ表示でのはみ出し対策 */
+                    margin: 100px 0 0 50px;
+                }
+            }
+        }
+    }
+}
+
+/*セクション05　どうぶつの家族を見てみよう*///////////////////////////////
+.family {
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        width: 1000px;
+        margin: 0 auto 80px;
+
+        &_head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            h3 {
+                margin: 0;
+                padding: 0;
+                font-size: 2em;
+            }
+
+            p {
+                text-align: center;
+                font-size: 1.3em;
+            }
+        }
+    }
+
+    .giraffe {
+        height: 700px;
+        background: url(./images/fambg01.png) no-repeat center/cover;
+        background-size: 100%;
+
+        &_flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            &_item {
+                text-align: center;
+
+                img {
+                    width: 200px;
+                }
+
+                .name {
+                    position: relative;
+                    z-index: 5;
+                    font-size: 1.5em;
+                    font-family: 'AB-kokoro_no3';
+                    color: #FFF;
+                    width: 100px;
+                    margin: 20px auto 0;
+                }
+                .name:after {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 110px;
+                    height: 50px;
+                    margin: auto;
+                    background: url(./images/namebg01.png) no-repeat center/cover;
+                }
+            }
+        }
+    }
+
+    .wao {
+        height: 700px;
+        background: url(./images/fambg02.png) no-repeat center/cover;
+        background-size: 100%;
+
+        &_flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 700px;
+            margin: 0 auto;
+            gap: 20px;
+
+            &_item {
+                text-align: center;
+
+                img {
+                    width: 200px;
+                }
+
+                .name {
+                    position: relative;
+                    z-index: 5;
+                    font-size: 1.5em;
+                    font-family: 'AB-kokoro_no3';
+                    color: #FFF;
+                    width: 120px;
+                    margin: 20px auto 0;
+                }
+                .name:after {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 130px;
+                    height: 50px;
+                    margin: auto;
+                    background: url(./images/namebg02.png) no-repeat center/cover;
+                }
+            }
+        }
+    }
+
+    
+}
+
+/*フッター*/////////////////////////////////////////////////////
+.footer {
+    width: 100vw;
+    height: 250px;
+    padding-bottom: 30px;
+    background: url(./images/footer_bg.png) no-repeat center/cover;
+    
+    img {
+        width: 100%;
+    }
+
+    .f_inner {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 50px;
+
+        &_info {
+            margin-top: 50px;
+
+            .logo {
+                width: 350px;
+            }
+        }
+        
+        &_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: right;
+
+            &_sub {
+                font-size: 1.5em;
+                color: #053903;
+            }
+
+            &_main {
+                font-size: 3em;
+                color: #FFF
+            }
+        }
+    }
+
+    .small {
+        display: block;
+        margin: 10px 0 0 50px;
+        font-size: 0.7em;
+    }
+
+}
+
+/*ここからiPadサイズ*////////////////////////////////////////////
+@media screen and (min-width:768px) and (max-width:1129px){
+}

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>宮崎市フェニックス自然動物園</title>
+<!-- google fonts読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Zen+Maru+Gothic:wght@400;500&display=Dela+Gothic+One&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+<!-- リセットcssの読み込み -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<!-- 自分のcssの読み込み -->
+<link rel="stylesheet" href="./text.css">
+<!-- swiperの読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- jqueryの読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- 自分のjsの読み込み -->
+<!-- <script src="./script.js"></script> -->
+<!-- 上に戻るボタンの挙動設定 -->
+<script>
+    $(function () {
+        const pageTop = $("#page-top");
+        pageTop.hide(); // 最初はボタンを非表示にする
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // 100pxスクロールしたら表示
+                pageTop.fadeIn(); // 100px以上スクロールしたらボタンをフェードイン
+            } else {
+                pageTop.fadeOut(); // 100px以下になったらボタンをフェードアウト
+            }
+        });
+        pageTop.click(function () {
+            $("body,html").animate(
+                {
+                    scrollTop: 0, // 上から0pxの位置に戻る
+                },
+                100 // 100ミリ秒かけて戻る
+            );
+            return false;
+        });
+        // フッター手前でストップ
+        $("#page-top").hide();
+        $(window).on("scroll", function () {
+            scrollHeight = $(document).height();
+            scrollPosition = $(window).height() + $(window).scrollTop();
+            footHeight = $("footer").innerHeight();
+            if (scrollHeight - scrollPosition <= footHeight) {
+                // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+                $("#page-top").css({
+                    position: "absolute",
+                    bottom: footHeight,
+                });
+            } else {
+                $("#page-top").css({
+                    position: "fixed",
+                    bottom: "60px",
+                });
+            }
+        });
+
+        // どうぶつスタンプラリーの「まだ/見たよ」のボタン
+        $('.imageItem_yet').on('click', function(event){
+		    event.preventDefault();
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')){
+            var text = $(this).data('text-clicked');
+        } else {
+            var text = $(this).data('text-default');
+        }
+        $(this).html(text);
+        });
+    }); 
+</script>
+</head>
+
+<body>
+    <div id="page-top"><!--上に戻るボタン-->
+        <a href="#">
+            <img src="./images/icon/goUp.png" alt="">
+        </a>
+    </div>
+
+    <header class="header"><!--ヘッダー-->
+        <div class="header_inner">
+            <a href="../index.html">
+                メインページへ<br>もどる
+            </a>
+        </div>
+    </header>
+
+    <main class="main"><!--メインページ-->
+        <div class="main_catchcopy"><!--ページタイトル-->
+            <p class="top karuta">フェニックス自然動物園キッズサイト</p>
+            <h1 class="karuta">フェニックスキッズ</h1>
+            <p class="bottom kokoro">
+                どうぶつのことをたくさん学んで、キミもどうぶつはかせになろう！
+            </p>
+        </div>
+
+        <div class="rightFlame"><!--右側吹き出し-->
+            <p class="kokoro">
+                どうぶつたちを<br>クリックして<br>5つのコーナーで<br>あそんでみよう！
+            </p>
+        </div>
+
+        <div class="contentsLink"><!--コンテンツ動物リンク-->
+            <div class="contentsLink_quiz"><!--動物クイズ　ライオン-->
+                <a href="#quizJump">
+                    <div class="text karuta">
+                        <img src="./images/kids-zoo02.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="contentsLink_stamp"><!--動物スタンプラリー　フラミンゴ-->
+                <a href="#stampJump">
+                    <div class="text karuta">
+                        <img src="./images/kids-zoo04.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="contentsLink_teach"><!--教えて飼育員さん　ゾウ-->
+                <a href="#teachJump">
+                    <div class="text karuta">
+                        <img src="./images/kids-zoo03.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="contentsLink_voice"><!--あの子の声はどんな声？　シマウマ-->
+                <a href="#voiceJump">
+                    <div class="text karuta">
+                        <img src="./images/kids-zoo01.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="contentsLink_family"><!--動物の家族を見てみよう　キリン-->
+                <a href="#familyJump">
+                    <div class="text karuta">
+                        <img src="./images/kids-zoo07.png" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <!--木-->
+            <div class="contentsLink_treeLeft">
+                <img class="tree" src="./images/kids-zoo06.png" alt="">
+            </div>
+            <div class="contentsLink_treeCenter">
+                <img class="treeCenter" src="./images/kids-zoo05.png" alt="">
+            </div>
+            <div class="contentsLink_treeRight">
+                <img class="tree" src="./images/kids-zoo08.png" alt="">
+            </div>
+        </div>
+    </main>
+
+    <section class="section quiz"><!--セクション01　動物クイズ-->
+        <div id="quizJump"></div>
+        <div class="section_title"><!--セクションタイトル-->
+            <p class="section_title_number_one karuta">1</p>
+            <h2 class="section_title_head karuta">どうぶつクイズ</h2>
+            <p class="section_title_text">
+                いろんなどうぶつについてのクイズにチャレンジしてみよう！<br>
+                もんだいはぜんぶで10問あるよ。<br>
+                ぜんぶせいかい出来たら、キミもどうぶつマスター！？
+            </p>
+            <p class="attention">こたえはもんだいクリックすると出てくるよ</p>
+        </div>
+
+        <ul class="quiz_list"><!--コンテンツグリッド-->
+            <li class="quiz_list_item orange"><!--オラウータン語源-->
+                <p class="number karuta">1</p>
+                <div class="question arrowRed">
+                    <p>
+                        とても頭がいいと言われるオランウータン。<br>
+                        名前のゆらいとなったのは、マレー語の「orang hutan」。そのいみは、なんでしょう？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">うみの人</p>
+                        <p class="select_text select_b">もりの人</p>
+                        <p class="select_text select_c">木の上の人</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_b">もりの人</p>
+                    <p class="answer_text">オラウータンはどうぐをつかうのがとってもとくい！人とよばれるくらいあたまがいいどうぶつなんだ。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item green"><!--うさぎの耳-->
+                <p class="number karuta">2</p>
+                <div class="question arrowGreen">
+                    <p>
+                        うさぎのながーい耳は、音を聞くいがいにもやくわりがあるよ。なんだと思う？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">ねつをにがす</p>
+                        <p class="select_text select_b">なかまを見分ける</p>
+                        <p class="select_text select_c">かわいく見せる</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_b">ねつをにがす</p>
+                    <p class="answer_text">うさぎの耳にはたくさんのけっかんがあって、かぜにあたることでけっかんが冷やされて、体おんが上がることをふせいでるんだよ。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item orange"><!--キリンの首の骨-->
+                <p class="number karuta">3</p>
+                <div class="question arrowRed">
+                    <p class="text">
+                        首がながーいことがとくちょうのキリン。その首のほねのかずは、人とくらべてどのくらい？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">人と同じかず</p>
+                        <p class="select_text select_b">2ばい</p>
+                        <p class="select_text select_c">5ばい</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_a">人と同じかず</p>
+                    <p class="answer_text">あんなにながーい首なのに、ほねのかずが人と同じ名乗って、とってもふしぎだね。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item green"><!--馬の耳-->
+                <p class="number karuta">4</p>
+                <div class="question arrowGreen">
+                    <p>
+                        よく動く耳を持っているお馬さん。その耳がペタッとうしろにくっついているのは、どんな時？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">ねむい時</p>
+                        <p class="select_text select_b">おこっている時</p>
+                        <p class="select_text select_c">たのしい時</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_b">おこっている時</p>
+                    <p class="answer_text">うまの耳には13このきんにくがあるとされていて、それを使って、そのときのきもちをじょうずにひょうげんしているよ。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item orange"><!--ダチョウ-->
+                <p class="number karuta">5</p>
+                <div class="question arrowRed">
+                    <p>
+                        足が速いことがじまんのダチョウ。一羽が走り出すと他のダチョウも走り出すのはどうして？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">ひまだから</p>
+                        <p class="select_text select_b">一人ぼっちになりたくないから</p>
+                        <p class="select_text select_c">のうみそが小さいから</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_c">のうみそが小さいから</p>
+                    <p class="answer_text">ダチョウののうみそのおもさは、たったの40グラム！だから走っているうちに、どうして走っているのかもわすれちゃうんだって。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item green"><!--ゾウの妊娠期間-->
+                <p class="number karuta">6</p>
+                <div class="question arrowGreen">
+                    <p>
+                        とっても大きい体をしているゾウは、赤ちゃんをどのくらいおなかの中で育てるでしょう？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">2か月</p>
+                        <p class="select_text select_b">12か月</p>
+                        <p class="select_text select_c">22か月</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_c">22か月</p>
+                    <p class="answer_text">ゾウさんがおなかで子どもをそだてるにっすう(にんしんきかん)は、ほにゅうるいの中でいちばん、ながいんだって！</p>
+                </div>
+            </li>
+            <li class="quiz_list_item orange"><!--ヤギの爪の数-->
+                <p class="number karuta">7</p>
+                <div class="question arrowRed">
+                    <p>
+                        ふれあいひろばでいつもエサをまっているヤギさんの、つめのかずは何本？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">6本</p>
+                        <p class="select_text select_b">4本</p>
+                        <p class="select_text select_c">2本</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_c">2本</p>
+                    <p class="answer_text">ヤギのように、2本の爪をもつどうぶつを、【ぐうていもく】と言います。ぶたや牛もなかまです。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item green"><!--フラミンゴの片足-->
+                <p class="number karuta">8</p>
+                <div class="question arrowGreen">
+                    <p>
+                        まっ赤な体でステキなショーをするフラミンゴ。どうしていつも片足で立っているの？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">さむいから</p>
+                        <p class="select_text select_b">バランスを取っているから</p>
+                        <p class="select_text select_c">てきが来た時にキックして身を守るため</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_a">さむいから</p>
+                    <p class="answer_text">りょうあしを水につけていると体おんがうばわれてしまうので、かたあしはうもうにしまってあたためているよ。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item orange"><!--しまうまの皮膚-->
+                <p class="number karuta">9</p>
+                <div class="question arrowRed">
+                    <p>
+                        しましまもようがとくちょうのシマウマ。その毛をそったら何色になる？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">白</p>
+                        <p class="select_text select_b">くろ</p>
+                        <p class="select_text select_c">しましま</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_b">くろ</p>
+                    <p class="answer_text">くろ色のヒフで、白いもようなんだって。ちなみに、トラはトラもようのヒフで、キリンはくろっぽい色をしているよ。</p>
+                </div>
+            </li>
+            <li class="quiz_list_item green"><!--トキの学名-->
+                <p class="number numberTen karuta">10</p>
+                <div class="question arrowGreen">
+                    <p>
+                        ずかんのがくめいが、ニッポニア・ニッポン。このがくめいを持つどうぶつの名前は？
+                    </p>
+                    <div class="select">
+                        <p class="select_text select_a">ツル</p>
+                        <p class="select_text select_b">トキ</p>
+                        <p class="select_text select_c">カラス</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p class="answer_b">トキ</p>
+                    <p class="answer_text">かつてはぜつめつのおそれがあったんだ。かんじでは【朱鷺】ってかくんだよ。むずかしい〜！</p>
+                </div>
+            </li>
+        </ul>
+
+        <p class="section_title_text">
+            キミはいくつせいかいできたかな？<br>
+            知らないことが見つかったら、どうぶつえんに行ってみよう！
+        </p>
+    </section>
+
+    <section class="section stamp"><!--セクション02　スタンプラリー-->
+        <div id="stampJump"></div>
+        <div class="section_title"><!--セクションタイトル-->
+            <p class="section_title_number karuta">2</p>
+            <h2 class="section_title_head karuta">どうぶつスタンプラリー</h2>
+            <p class="section_title_text">
+                あのどうぶつの体の大きさは？　なき声は？<br>
+                どうぶつえんでじっさいにかんさつしてみよう！<br>
+                かんさつしたどうぶつは、「まだ」をクリックして「見たよ！」に変えてみよう。
+            </p>
+        </div>
+
+        <div class="stamp_grid"><!--コンテンツグリッド-->
+            <div class="stamp_grid_item top"><!--マサイキリン-->
+                <div class="imageItem">
+                    <img src="./images/stamp01.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>マサイキリン</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item"><!--アジアゾウ-->
+                <div class="imageItem">
+                    <img src="./images/stamp02.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>アジアゾウ</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item top"><!--ケープペンギン-->
+                <div class="imageItem">
+                    <img src="./images/stamp03.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>ケープペンギン</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item"><!--カイウサギ-->
+                <div class="imageItem">
+                    <img src="./images/stamp04.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>カイウサギ</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item top"><!--ミーアキャット-->
+                <div class="imageItem">
+                    <img src="./images/stamp05.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>ミーアキャット</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item"><!--スマトラトラ-->
+                <div class="imageItem">
+                    <img src="./images/stamp06.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>スマトラトラ</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item top"><!--ダチョウ-->
+                <div class="imageItem">
+                    <img src="./images/stamp07.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>ダチョウ</p>
+                </div>
+            </div>
+            <div class="stamp_grid_item"><!--レッサーパンダ-->
+                <div class="imageItem">
+                    <img src="./images/stamp08.png" alt="">
+                    <button class="imageItem_yet" data-text-default="まだ" data-text-clicked="見たよ">
+                        <p>まだ</p>
+                    </button>
+                </div>
+                <div class="name">
+                    <p>レッサーパンダ</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="section_title_text">
+            じつぶつはどうだった？<br>
+            ほかにもたくさんのどうぶつがいるよ。<br>
+            ずかんを見てさがしてみよう！
+        </p>
+
+        <div class="bottom"><!--セクション　テキストorボタン+画像-->
+            <div class="bottom_left">
+                <img src="./images/top07.png" alt="">
+            </div>
+            <a class="btn" href="../pictorialbook/index.html">どうぶつずかんへ</a>
+            <div class="bottom_right">
+                <img src="./images/top08.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="section teach"><!--セクション03　教えて飼育員さん-->
+        <div id="teachJump"></div>
+        <div class="section_title"><!--セクションタイトル-->
+            <p class="section_title_number karuta">3</p>
+            <h2 class="section_title_head karuta">おしえて！しいくいんさん</h2>
+            <p class="section_title_text">
+                どうぶつのことなら「しいくいん」さんに聞くのがイチバン！<br>
+                どうぶつのプロに、みんなのギモンをしつもんしてみよう。
+            </p>
+        </div>
+
+        <div class="teach_grid"><!--コンテンツグリッド-->
+            <div class="teach_grid_item">
+                <div class="imageAnime" >
+                    <img src="./images/kids01.png" alt="">
+                </div>
+                <div class="teach_grid_item_text">
+                    <p class="question_text">
+                        どうぶつともっと仲良くなりたいと思っているけど、<br>
+                        ことばもつうじないし、むずかしいなあ。<br>
+                        どうぶつと今よりもっと仲良くなってお友だちになるには<br>
+                        どうしたらいいですか？
+                    </p>
+                </div>
+            </div>
+
+            <div class="teach_grid_item">
+                <div class="teach_grid_item_opposite">
+                    <p class="answer_text">
+                        どうぶつたちは、おだやかでやさしい人が好きなんだ。<br>
+                        だから、大きな声を出さずに、そーっと<br>
+                        せっしてあげるとよろこんでくれるよ。<br>
+                        人がいつもおちついていると、<br>
+                        どうぶつたちはそれだけで安心するんだよ。
+                    </p>
+                </div>
+                <div class="imageAnime" >
+                    <img src="./images/man.png" alt="">
+                </div>
+            </div>
+
+            <div class="teach_grid_item">
+                <div class="imageAnime" >
+                    <img src="./images/kids02.png" alt="">
+                </div>
+                <div class="teach_grid_item_text">
+                    <p class="question_text">
+                        前に見たとき、しいくいんさんがちかよると、<br>
+                        ヤギがものすごくないてちかよっていました。<br>
+                        どうぶつたちは、しいくいんさんと、そのほかの人を<br>
+                        見分けることができるんですか？<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="teach_grid_item">
+                <div class="teach_grid_item_opposite">
+                    <p class="answer_text">
+                        どうぶつたちは、いつもえさをくれる人を<br>
+                        おぼえているようです。<br>
+                        足音や、きている服、においなどではんべつして、<br>
+                        自分にとって何かいいことをしてくれる人だ<br>
+                        と言うのを、わかっているのかも知れませんね。
+                    </p>
+                </div>
+                <div class="imageAnime" >
+                    <img src="./images/man.png" alt="">
+                </div>
+            </div>
+
+            <div class="teach_grid_item">
+                <div class="imageAnime" >
+                    <img src="./images/kids03.png" alt="">
+                </div>
+                <div class="teach_grid_item_text">
+                    <p class="question_text">
+                        私はしょうらい、しいくいんさんのような<br>
+                        どうぶつのおせわをするのがゆめです！<br>
+                        しいくいんは、たいへんですか？<br>
+                        どうやったらしいくいんさんになれますか？
+                    </p>
+                </div>
+            </div>
+
+            <div class="teach_grid_item">
+                <div class="teach_grid_item_opposite">
+                    <p class="answer_text">
+                        いちばん大切なのは、どうぶつが好き！<br>
+                        というきもちだよ。<br>
+                        でも、とてもたいへんなおしごとだから、<br>
+                        まずはおべんきょうを好きになって、<br>
+                        たくさんのどうぶつのことを知ってほしいな。
+                    </p>
+                </div>
+                <div class="imageAnime" >
+                    <img src="./images/man.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <p class="section_title_text">
+            気になることはかいけつしたかな？<br>
+            ほかにもギモンがあったら、どんどん聞いてみよう！
+        </p>
+        
+        <div class="bottom"><!--セクション　テキストorボタン+画像-->
+            <div class="bottom_left">
+                <img src="./images/top09.png" alt="">
+            </div>
+            <a class="btn" href="../zoo/index.html#learnJump">まなぶプログラムへ</a>
+            <div class="bottom_right">
+                <img src="./images/top010.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="section voice"><!--セクション04　あの子の声はどんな声-->
+        <div id="voiceJump"></div>
+        <div class="section_title"><!--セクションタイトル-->
+            <p class="section_title_number karuta">4</p>
+            <h2 class="section_title_head karuta">あの子の声はどんな声？</h2>
+            <p class="section_title_text">
+                    どうぶつのなき声、聞いたことあるかな？<br>
+                    気になるあの子の声を聞いてみよう！
+            </p>
+        </div>
+
+        <div class="voice_grid"><!--コンテンツグリッド-->
+            <div class="voice_grid_item"><!--マサイキリン-->
+                <div class="voice_grid_item_image">
+                    <img src="./images/voice01.png" alt="">
+                    <p class="name kokoro">
+                        マサイキリン
+                    </p>
+                </div>
+                <div class="voice_grid_item_contents">
+                    <div class="text">
+                        <p>
+                            初めて聞いたらみんなびっくりするんだ〜。<br>
+                            じつはボク、牛さんのなかまなんだよ。
+                        </p>
+                        <audio src="" controls></audio>
+                    </div>
+                    <audio src=""></audio>
+                </div>
+            </div>
+
+            <div class="voice_grid_item"><!--グラントシマウマ-->
+                <div class="voice_grid_item_contents">
+                    <div class="text">
+                        <p class="opposite">
+                            「ヒヒーン！」だと思った？　<br>
+                            ぜんぜんちがうから、ビックリしたでしょ。
+                        </p>
+                        <audio src="" controls></audio>
+                    </div>
+                    <audio src=""></audio>
+                </div>
+                <div class="voice_grid_item_image">
+                    <img src="./images/voice02.png" alt="">
+                    <p class="name kokoro">
+                        グラントシマウマ
+                    </p>
+                </div>
+            </div>
+
+            <div class="voice_grid_item"><!--カピバラ-->
+                <div class="voice_grid_item_image">
+                    <img src="./images/voice03.png" alt="">
+                    <p class="name kokoro">
+                        カピバラ
+                    </p>
+                </div>
+                <div class="voice_grid_item_contents">
+                    <div class="text">
+                        <p>
+                            ぼくたちカピバラはネズミのなかま！<br>
+                            さて、なきごえはどうかな？
+                        </p>
+                        <audio src="" controls></audio>
+                    </div>
+                    <audio src=""></audio>
+                </div>
+            </div>
+
+            <div class="voice_grid_item"><!--フラミンゴ-->
+                <div class="voice_grid_item_contents">
+                    <div class="text">
+                        <p class="opposite">
+                            美しくおどるわたしたちのなき声って、<br>
+                            いったいどれだけキレイなのかしら〜？
+                        </p>
+                    </div>
+                    <audio src="" controls></audio>
+                </div>
+                <div class="voice_grid_item_image">
+                    <img src="./images/voice04.png" alt="">
+                    <p class="name kokoro">
+                        フラミンゴ
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p class="section_title_text">
+            はじめて聞くなき声もあったかな？<br>
+            次はどうぶつえんにききに来てね！
+        </p>
+        
+        <div class="bottom"><!--セクション　テキストorボタン+画像-->
+            <div class="bottom_left">
+                <img src="./images/top011.png" alt="">
+            </div>
+            <div class="bottom_right">
+                <img src="./images/top012.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="section family"><!--セクション05　どうぶつの家族を見てみよう-->
+        <div id="familyJump"></div>
+        <div class="section_title"><!--セクションタイトル-->
+            <p class="section_title_number karuta">5</p>
+            <h2 class="section_title_head karuta">
+                どうぶつの<br>
+                かぞくを見てみよう！
+            </h2>
+            <p class="section_title_text">
+                どうぶつえんでは、いくつかのどうぶつたちがむれで生活しているんだ。<br>
+                いろんなしゅるいのむれを見てみよう！
+            </p>
+        </div>
+
+        <div class="family_container giraffe"><!--マサイキリングループ-->
+            <div class="family_container_head"><!--品種名＆テキスト-->
+                <h3 class="family_container_head_group karuta">
+                    マサイキリン
+                </h3>
+                <p>
+                    キリンの体のもようをよーくかんさつしてみて。<br>
+                    それぞれちがうもようと、とくちょう的なマークがあるよ。
+                </p>
+            </div>
+
+            <div class="giraffe_flex"><!--画像-->
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe01.png" alt="">
+                        <p class="name">コユメ</p>
+                    </div>
+                </div>
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe02.png" alt="">
+                        <p class="name">トウマ</p>
+                    </div>
+                </div>
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe03.png" alt="">
+                        <p class="name">ハルマ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="family_container wao"><!--ワオキツネザルグループ-->
+            <div class="family_container_head"><!--品種名＆テキスト-->
+                <h3 class="family_container_head_group karuta">
+                    ワオキツネザル
+                </h3>
+                <p>
+                    見分けられたらすごい！<br>
+                    顔のもようと、体の色でチャレンジしてみて！
+                </p>
+            </div>
+
+            <div class="wao_flex"><!--画像-->
+                <div class="wao_flex_item">
+                    <div class="wao_flex_item_image">
+                        <img src="./images/wao01.png" alt="">
+                        <p class="name">チェント</p>
+                    </div>
+                </div>
+                <div class="wao_flex_item">
+                    <div class="wao_flex_item_image">
+                        <img src="./images/wao02.png" alt="">
+                        <p class="name">チャババ</p>
+                    </div>
+                </div>
+                <div class="wao_flex_item">
+                    <div class="wao_flex_item_image">
+                        <img src="./images/wao03.png" alt="">
+                        <p class="name">サクタロウ</p>
+                    </div>
+                </div>
+                <div class="wao_flex_item">
+                    <div class="wao_flex_item_image">
+                        <img src="./images/wao03.png" alt="">
+                        <p class="name">イチャミ</p>
+                    </div>
+                </div>
+                <div class="wao_flex_item">
+                    <div class="wao_flex_item_image">
+                        <img src="./images/wao03.png" alt="">
+                        <p class="name">赤ちゃん</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="family_container giraffe"><!--ミーアキャットループ-->
+            <div class="family_container_head"><!--品種名＆テキスト-->
+                <h3 class="family_container_head_group karuta">
+                    マサイキリン
+                </h3>
+                <p>
+                    キリンの体のもようをよーくかんさつしてみて。<br>
+                    それぞれちがうもようと、とくちょう的なマークがあるよ。
+                </p>
+            </div>
+
+            <div class="giraffe_flex"><!--画像-->
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe01.png" alt="">
+                        <p class="name">コユメ</p>
+                    </div>
+                </div>
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe02.png" alt="">
+                        <p class="name">トウマ</p>
+                    </div>
+                </div>
+                <div class="giraffe_flex_item">
+                    <div class="giraffe_flex_item_image">
+                        <img src="./images/giraffe03.png" alt="">
+                        <p class="name">ハルマ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom"><!--セクション　テキストorボタン+画像-->
+            <div class="bottom_left">
+                <img src="./images/top013.png" alt="">
+            </div>
+            <p class="section_title_text">
+                どうぶつにまつわるコーナーはどうだったかな？<br>
+                まだまだたくさん、出会ったことのないどうぶつたちが、<br>
+                どうぶつえんでみんなを待っているよ！<br>
+                ぜひ、あそびにきてね！
+            </p>
+            <div class="bottom_right">
+                <img src="./images/top014.png" alt="">
+            </div>
+        </div>
+    </section>
+       
+    <footer class="footer">
+        <div class="f_inner">
+            <div class="f_inner_info">
+                <img class="logo" src="./images/logo.png" alt="">
+            </div>
+            <div class="f_inner_text karuta">
+                <p class="f_inner_text_sub">
+                    フェニックス自然動物園キッズサイト
+                </p>
+                <p class="f_inner_text_main">
+                    フェニックスキッズ
+                </p>
+            </div>
+    </div>
+
+    <small class="small">Copyright © 2011-2022 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+    
+</footer>
+
+
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!--自作のJS-->
+<script src="./script.js"></script>
+</body>

@@ -1,0 +1,1189 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  font-family: '筑紫A丸ゴシック', sans-serif, 'Mochiy Pop One', cursive;
+  color: #2E2E2E;
+}
+
+/*フォントクラス指定ここから*/
+.karuta {
+  font-family: 'AB-karuta_bold';
+}
+
+.kokoro {
+  font-family: 'AB-kokoro_no3';
+}
+
+.mottie {
+  font-family: 'モッチーポップ';
+}
+
+.vdl {
+  font-family: 'VDL ロゴJrブラック';
+}
+
+/*フォントクラス指定ここまで*/
+h1, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h2, p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6em;
+}
+
+h4 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h4:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 4px;
+  background-color: #F8B851;
+  bottom: 1px;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2E2E2E;
+}
+
+.btn {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 50px auto;
+  padding: 8px 15px;
+  border-radius: 30px;
+  line-height: 1.8em;
+  background-color: #85B783;
+  color: #FFF;
+  font-weight: bold;
+}
+
+a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+/*見出し＆説明テキスト*/
+.section_text {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+/*上へ戻るボタン*/
+#page-top {
+  position: fixed;
+  z-index: 50;
+  right: 60px;
+}
+
+#page-top a {
+  padding: 10px 20px;
+}
+
+#page-top a img {
+  width: 60px;
+}
+
+#page-top a:hover {
+  opacity: 0.6;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+/*ヘッダー*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 200px;
+  height: 189px;
+  font-size: 1.4em;
+  font-family: 'AB-kokoro_no3';
+  background: url(./images/headerbg.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.header_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-left: 5px;
+}
+
+.header_inner a {
+  color: #FFF;
+}
+
+.header_inner a:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+/*メイン*/
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url(./images/background.png) center/cover;
+}
+
+.main_catchcopy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  gap: 5px;
+}
+
+.main_catchcopy .top {
+  font-size: 1.5em;
+  color: #053903;
+}
+
+.main_catchcopy h1 {
+  font-size: 4.0em;
+  color: #F8B851;
+}
+
+.main .rightFlame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  background: url(./images/flame.png) no-repeat center/cover;
+}
+
+.main .rightFlame p {
+  margin: -10px 0 0 5px;
+}
+
+.main .contentsLink {
+  position: relative;
+}
+
+.main .contentsLink img {
+  width: 400px;
+}
+
+.main .contentsLink .text {
+  font-size: 1.8em;
+}
+
+.main .contentsLink_quiz {
+  position: absolute;
+  left: 23%;
+}
+
+.main .contentsLink_quiz div {
+  position: relative;
+}
+
+.main .contentsLink_quiz div:before {
+  position: absolute;
+  content: "どうぶつクイズ";
+  color: #F8B851;
+  left: 20px;
+}
+
+.main .contentsLink_stamp {
+  position: absolute;
+  top: 40px;
+  right: 27%;
+}
+
+.main .contentsLink_stamp img {
+  width: 350px;
+}
+
+.main .contentsLink_stamp div {
+  position: relative;
+}
+
+.main .contentsLink_stamp div:before {
+  position: absolute;
+  content: "どうぶつ\Aスタンプラリー";
+  white-space: pre;
+  text-align: center;
+  color: #F8B851;
+  top: -70px;
+  left: 70px;
+}
+
+.main .contentsLink_teach {
+  position: absolute;
+  top: 300px;
+  left: 13%;
+}
+
+.main .contentsLink_teach div {
+  position: relative;
+}
+
+.main .contentsLink_teach div:before {
+  position: absolute;
+  content: "おしえて！\Aしいくいんさん";
+  white-space: pre;
+  color: #F8B851;
+  left: -30px;
+}
+
+.main .contentsLink_voice {
+  position: absolute;
+  top: 200px;
+  left: 38%;
+}
+
+.main .contentsLink_voice img {
+  width: 350px;
+}
+
+.main .contentsLink_voice div {
+  position: relative;
+}
+
+.main .contentsLink_voice div:before {
+  position: absolute;
+  content: "あの子の声は\Aどんな声？";
+  white-space: pre;
+  color: #F8B851;
+  top: 100px;
+  left: -50px;
+}
+
+.main .contentsLink_family {
+  position: absolute;
+  top: 280px;
+  right: 20%;
+}
+
+.main .contentsLink_family div {
+  position: relative;
+}
+
+.main .contentsLink_family div:before {
+  position: absolute;
+  content: "どうぶつの\Aかぞくを\A見てみよう！";
+  white-space: pre;
+  color: #F8B851;
+  top: 20px;
+  right: -50px;
+}
+
+.main .contentsLink_treeLeft {
+  position: absolute;
+  top: 100px;
+  left: 12%;
+}
+
+.main .contentsLink_treeCenter {
+  position: absolute;
+  top: -35px;
+  left: 45%;
+}
+
+.main .contentsLink_treeCenter .treeCenter {
+  width: 130px;
+}
+
+.main .contentsLink_treeRight {
+  position: absolute;
+  top: 100px;
+  right: 18%;
+}
+
+.main .contentsLink .tree {
+  width: 150px;
+}
+
+/*セクション共通*/
+.section {
+  margin: 150px auto;
+  /*画面左右の動物写真の配置*/
+}
+
+.section #quizJump, .section #stampJump, .section #teachJump, .section #voiceJump, .section #familyJump {
+  padding-top: 80px;
+}
+
+.section_title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.section_title_number_one {
+  position: absolute;
+  z-index: 10;
+  top: -50px;
+  left: -6%;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  font-size: 3.5em;
+}
+
+.section_title_number {
+  position: absolute;
+  z-index: 10;
+  top: -50px;
+  left: -10%;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  font-size: 3.5em;
+}
+
+.section_title_head {
+  font-size: 5em;
+  color: #F8B851;
+}
+
+.section_title_text {
+  margin: 50px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section_title .attention {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+.section_title:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -70px;
+  left: -15%;
+  width: 130px;
+  height: 130px;
+  background: url(./images/noFlame.png) no-repeat center/cover;
+}
+
+.section .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section .bottom_left {
+  margin-top: -200px;
+}
+
+.section .bottom a {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.section .bottom_right {
+  margin-top: -140px;
+}
+
+/*セクション01　どうぶつクイズ*/
+.quiz_list {
+  position: relative;
+  width: 700px;
+  margin: 50px auto;
+}
+
+.quiz_list .orange {
+  background-color: #FFF5F1;
+}
+
+.quiz_list .green {
+  background-color: #F0FFF0;
+}
+
+.quiz_list_item {
+  position: relative;
+  margin: 40px 0;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+.quiz_list_item .number {
+  position: absolute;
+  z-index: 10;
+  top: -16px;
+  left: -2.3%;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  font-size: 2em;
+  color: #FFF;
+}
+
+.quiz_list_item .numberTen {
+  left: -3.5%;
+}
+
+.quiz_list_item .question {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 120px;
+  cursor: pointer;
+}
+
+.quiz_list_item .question .select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 15px;
+  margin: 15px 0;
+  font-family: 'Mochiy Pop One';
+  font-size: 1em;
+}
+
+.quiz_list_item .question .select_text:before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: #F53166;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #FFF;
+}
+
+.quiz_list_item .question .select .select_a:before {
+  content: 'A';
+}
+
+.quiz_list_item .question .select .select_b:before {
+  content: 'B';
+}
+
+.quiz_list_item .question .select .select_c:before {
+  content: 'C';
+}
+
+.quiz_list_item .arrowRed, .quiz_list_item .arrowGreen {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.quiz_list_item .arrowRed:before, .quiz_list_item .arrowGreen:before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: -3.5%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.quiz_list_item .arrowRed:before {
+  background: #B40A0A;
+}
+
+.quiz_list_item .arrowGreen:before {
+  background-color: #547658;
+}
+
+.quiz_list_item .arrowRed:after, .quiz_list_item .arrowGreen:after {
+  content: '';
+  position: absolute;
+  top: 48%;
+  right: -2.8%;
+  width: 7px;
+  height: 7px;
+  border-right: solid 3px #FFF;
+  border-bottom: solid 3px #FFF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.quiz_list_item .arrowRed:after {
+  background-color: #B40A0A;
+}
+
+.quiz_list_item .arrowGreen:after {
+  background-color: #547658;
+}
+
+.quiz_list_item .arrowRed.open:after, .quiz_list_item .arrowGreen.open:after {
+  top: 50.5%;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+.quiz_list_item:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -33px;
+  left: -7%;
+  width: 80px;
+  height: 80px;
+  background: url(./images/nobg.png) no-repeat center/cover;
+}
+
+.quiz_list .answer {
+  display: none;
+  position: relative;
+  margin: 20px 0 0;
+  font-size: 1.2;
+  font-family: 'Mochiy Pop One';
+}
+
+.quiz_list .answer_text {
+  padding: 10px 0;
+  font-size: 1em;
+  font-family: '筑紫A丸ゴシック';
+}
+
+.quiz_list .answer_a:before, .quiz_list .answer_b:before, .quiz_list .answer_c:before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: #F53166;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #FFF;
+}
+
+.quiz_list .answer_a:before {
+  content: 'A';
+}
+
+.quiz_list .answer_b:before {
+  content: 'B';
+}
+
+.quiz_list .answer_c:before {
+  content: 'C';
+}
+
+.quiz_list .answer:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  width: 650px;
+  border: solid 1px #383838;
+}
+
+/*セクション02　スタンプラリー*/
+.stamp_grid {
+  width: 1100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 60px;
+  grid-row-gap: 100px;
+  margin: 120px auto 0;
+}
+
+.stamp_grid .top {
+  margin-top: -50px;
+}
+
+.stamp_grid p {
+  font-family: 'AB-kokoro_no3';
+}
+
+.stamp_grid_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.stamp_grid_item .name p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 1.6em;
+  padding: 7px 15px;
+  background-color: #F8B851;
+  color: #FFF;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.stamp_grid_item .imageItem {
+  position: relative;
+}
+
+.stamp_grid_item .imageItem_yet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 65%;
+  right: -8%;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  background-color: #FFEDDB;
+  border-style: none;
+  border-radius: 50%;
+  font-size: 1.3em;
+  font-family: 'AB-kokoro_no3';
+  cursor: pointer;
+}
+
+.stamp_grid_item .imageItem_yet.active {
+  background-color: #F8B851;
+}
+
+/*セクション03　教えて飼育員さん*/
+.teach img {
+  width: 350px;
+}
+
+.teach_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-row-gap: 80px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.teach_grid_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 200px;
+  width: 100%;
+  /*質問吹き出し*/
+  /*答え吹き出し*/
+  /*吹き出しアニメーション*/
+}
+
+.teach_grid_item p {
+  position: relative;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.teach_grid_item_text, .teach_grid_item_opposite {
+  position: relative;
+  width: 100%;
+}
+
+.teach_grid_item_text:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -38%;
+  left: -8%;
+  width: 700px;
+  height: 250px;
+  background: url(./images/voiceFlame01.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.teach_grid_item_opposite:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -21%;
+  left: -2%;
+  width: 700px;
+  height: 250px;
+  background: url(./images/voiceFlame02.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.teach_grid_item .question_text:before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: -60%;
+  right: -2%;
+  width: 150px;
+  height: 100px;
+  background: url(./images/quesFlame.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.teach_grid_item .question_text:after {
+  content: 'ギモン';
+  position: absolute;
+  z-index: 5;
+  top: -38%;
+  right: 2%;
+  color: #FFF;
+  font-size: 1.5em;
+  font-family: 'AB-kokoro_no3';
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.teach_grid_item .answer_text:before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: -27%;
+  left: -14%;
+  width: 155px;
+  height: 100px;
+  background: url(./images/ansFlame.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.teach_grid_item .answer_text:after {
+  content: 'アンサー';
+  position: absolute;
+  z-index: 5;
+  top: -10%;
+  left: -12%;
+  color: #FFF;
+  font-size: 1.4em;
+  font-family: 'AB-kokoro_no3';
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.teach_grid_item .imageAnime.blockIn {
+  -webkit-animation: poyopoyo 2s ease-out infinite;
+          animation: poyopoyo 2s ease-out infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+
+/*セクション04　あの子の声はどんな声*/
+.voice img {
+  width: 350px;
+}
+
+.voice_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 100px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.voice_grid_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 180px;
+}
+
+.voice_grid_item_image .name {
+  display: block;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+.voice_grid_item_image .name:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 10px;
+  background-color: #F8B851;
+  bottom: 11px;
+  left: 0;
+  border-radius: 5px;
+}
+
+.voice_grid_item_contents .text {
+  width: 550px;
+}
+
+.voice_grid_item_contents .text p {
+  position: relative;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.voice_grid_item_contents .text p:after {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: -45px;
+  left: -12%;
+  width: 650px;
+  height: 160px;
+  background: url(./images/voiceFlame03.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.voice_grid_item_contents .text .opposite {
+  position: relative;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.voice_grid_item_contents .text .opposite:after {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: -45px;
+  left: -6%;
+  width: 620px;
+  height: 160px;
+  background: url(./images/voiceFlame04.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.voice_grid_item_contents audio {
+  width: 450px;
+  max-width: 100%;
+  /* スマホ表示でのはみ出し対策 */
+  margin: 100px 0 0 50px;
+}
+
+/*セクション05　どうぶつの家族を見てみよう*/
+.family_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  width: 1000px;
+  margin: 0 auto 80px;
+}
+
+.family_container_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.family_container_head h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+.family_container_head p {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.family .giraffe {
+  height: 700px;
+  background: url(./images/fambg01.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.family .giraffe_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.family .giraffe_flex_item {
+  text-align: center;
+}
+
+.family .giraffe_flex_item img {
+  width: 200px;
+}
+
+.family .giraffe_flex_item .name {
+  position: relative;
+  z-index: 5;
+  font-size: 1.5em;
+  font-family: 'AB-kokoro_no3';
+  color: #FFF;
+  width: 100px;
+  margin: 20px auto 0;
+}
+
+.family .giraffe_flex_item .name:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  width: 110px;
+  height: 50px;
+  margin: auto;
+  background: url(./images/namebg01.png) no-repeat center/cover;
+}
+
+.family .wao {
+  height: 700px;
+  background: url(./images/fambg02.png) no-repeat center/cover;
+  background-size: 100%;
+}
+
+.family .wao_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 700px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.family .wao_flex_item {
+  text-align: center;
+}
+
+.family .wao_flex_item img {
+  width: 200px;
+}
+
+.family .wao_flex_item .name {
+  position: relative;
+  z-index: 5;
+  font-size: 1.5em;
+  font-family: 'AB-kokoro_no3';
+  color: #FFF;
+  width: 120px;
+  margin: 20px auto 0;
+}
+
+.family .wao_flex_item .name:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  height: 50px;
+  margin: auto;
+  background: url(./images/namebg02.png) no-repeat center/cover;
+}
+
+/*フッター*/
+.footer {
+  width: 100vw;
+  height: 250px;
+  padding-bottom: 30px;
+  background: url(./images/footer_bg.png) no-repeat center/cover;
+}
+
+.footer img {
+  width: 100%;
+}
+
+.footer .f_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 50px;
+}
+
+.footer .f_inner_info {
+  margin-top: 50px;
+}
+
+.footer .f_inner_info .logo {
+  width: 350px;
+}
+
+.footer .f_inner_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+}
+
+.footer .f_inner_text_sub {
+  font-size: 1.5em;
+  color: #053903;
+}
+
+.footer .f_inner_text_main {
+  font-size: 3em;
+  color: #FFF;
+}
+
+.footer .small {
+  display: block;
+  margin: 10px 0 0 50px;
+  font-size: 0.7em;
+}
+
+/*ここからiPadサイズ*/
+/*# sourceMappingURL=text.css.map */
